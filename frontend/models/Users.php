@@ -11,6 +11,8 @@ use Yii;
  * @property string $name
  * @property string $email
  * @property string $password
+ * @property string $picture
+ * @property string $description
  *
  * @property UsersHasMvwdAuthorizations[] $usersHasMvwdAuthorizations
  * @property Authorizations[] $authorizations
@@ -33,10 +35,11 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email', 'password'], 'required'],
+            [['name', 'email', 'password', 'picture', 'description'], 'required'],
+            [['description'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['email'], 'string', 'max' => 45],
-            [['password'], 'string', 'max' => 20],
+            [['password', 'picture'], 'string', 'max' => 255],
             [['email'], 'unique'],
         ];
     }
@@ -51,6 +54,8 @@ class Users extends \yii\db\ActiveRecord
             'name' => Yii::t('app', 'Name'),
             'email' => Yii::t('app', 'Email'),
             'password' => Yii::t('app', 'Password'),
+            'picture' => Yii::t('app', 'Picture'),
+            'description' => Yii::t('app', 'Description'),
         ];
     }
 

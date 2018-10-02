@@ -66,6 +66,9 @@ ul {
     list-style: none;
 }
 .none{display: none;}
+.c-left{clear: left;}
+.c-right{clear: rigth;}
+.c-both{clear: both;}
 .f-left{float: left;}
 .f-right{float: right;}
 .o-hidden{overflow: hidden;}
@@ -78,6 +81,15 @@ ul {
     content: '';
     height: 3px;
     background-color: #d9b356;
+    position: relative;
+    top: 15px;
+    bottom: 0;
+    display: block;
+}
+.bottom_smalline-red:after{
+    content: '';
+    height: 3px;
+    background-color: #ac281a;
     position: relative;
     top: 15px;
     bottom: 0;
@@ -218,8 +230,8 @@ form label{font-weight: bolder;}
     font-weight: 700;
     padding: 10px 20px;
 }
-#chi-sono{
-    background-image: url(../images/pattern/chi-sono.jpg);
+#about{
+    background-image: url(../images/pattern/about.jpg);
 }
 
 #loading,

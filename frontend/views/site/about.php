@@ -1,16 +1,38 @@
 <?php
+use app\models\Users;
 
-/* @var $this yii\web\View */
+$users = Users::find()->all();
+$cont = -1;
 
-use yii\helpers\Html;
-
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'I nostri designer | M&V World Design';
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div id="about">
+    <div class="wrapper margin-0-a container">
+        <div class="row">
+            <h1 class="title text-center bottom_line-gold"><?= Yii::t('app', 'Chi Siamo') ?></h1>
+        </div>
+        
+        <?php foreach($users as $k_u => $v_u) : ?>
+            <div class="row">
+                <?php $cont ++ ?>
+                
+                <?php if($cont%2 == 0) : ?>
+                <div class="col-sm-3 cover-photo">
+                    <img src="<?= Yii::getAlias('@web') ?>/images/uploads/about/<?= $v_u->picture ?>" alt="<?= $v_u->name ?>" />
+                </div>
+                <?php endif; ?>
 
-    <p>This is the About page. You may modify the following file to customize its content:</p>
-
-    <code><?= __FILE__ ?></code>
+                <div class="col-sm-9 text-justify background-w-08">
+                    <h2 class="bottom_smalline-red f-left"><?= $v_u->name ?></h2>
+                    <p class="c-left" style="margin-top: 80px;"><?= $v_u->description ?></p>
+                </div>
+                
+                <?php if($cont%2 != 0) : ?>
+                <div class="col-sm-3 cover-photo">
+                    <img src="<?= Yii::getAlias('@web') ?>/images/uploads/about/<?= $v_u->picture ?>" alt="<?= $v_u->name ?>" />
+                </div>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
