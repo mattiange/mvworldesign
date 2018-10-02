@@ -12,10 +12,12 @@ use Yii;
  * @property int $position
  * @property int $parent
  * @property int $menu_id
+ * @property string $controller
+ * @property string $model
  *
  * @property Menu $menu
  */
-class MenuItem extends \yii\db\ActiveRecord
+class Menuitem extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -31,9 +33,10 @@ class MenuItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['menu_item', 'position', 'menu_id'], 'required'],
+            [['menu_item', 'position', 'menu_id', 'controller', 'model'], 'required'],
             [['position', 'parent', 'menu_id'], 'integer'],
             [['menu_item'], 'string', 'max' => 45],
+            [['controller', 'model'], 'string', 'max' => 50],
             [['menu_id'], 'exist', 'skipOnError' => true, 'targetClass' => Menu::className(), 'targetAttribute' => ['menu_id' => 'id']],
         ];
     }
@@ -49,6 +52,8 @@ class MenuItem extends \yii\db\ActiveRecord
             'position' => Yii::t('app', 'Position'),
             'parent' => Yii::t('app', 'Parent'),
             'menu_id' => Yii::t('app', 'Menu ID'),
+            'controller' => Yii::t('app', 'Controller'),
+            'model' => Yii::t('app', 'Model'),
         ];
     }
 

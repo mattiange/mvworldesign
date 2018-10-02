@@ -1,0 +1,292 @@
+/**
+* STILE DEL SITO
+* 
+* Data: 2/10/2018
+* Autore: Mattia Leonardo Angelillo
+* Email: mattia.angelillo@gmail.com
+*/
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Regular.ttf);
+    font-weight: regular;
+}
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Black.ttf);
+    font-weight: 900;
+}
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Bold.ttf);
+    font-weight: bold;
+}
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-Italic.ttf);
+    font-style: italic;
+}
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-SemiBold.ttf);
+    font-weight: 500;
+}
+font-face{
+    font-family: Raleway;
+    src: url(../fonts/Raleway/Raleway-SemiBoldItalic.ttf);
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+*{font-family: Raleway;}
+a {
+    color: #d9b356;
+    text-decoration: none;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.none{display: none;}
+.f-left{float: left;}
+.f-right{float: right;}
+.o-hidden{overflow: hidden;}
+.cover-photo img{width: 100%;}
+.wrapper{width: 80%;margin-bottom: 10px !important;overflow: hidden;}
+.margin-0-a{margin: 0 auto;}
+.text-justify{text-align: justify;}
+.background-w-08{background-color: rgba(255, 255, 255, .8)}
+.bottom_line-gold:after{
+    content: '';
+    height: 3px;
+    background-color: #d9b356;
+    position: relative;
+    top: 15px;
+    bottom: 0;
+    display: block;
+}
+.row{margin-top: 10px;}
+.navbar-fixed-top {
+    background-color: rgba(0, 0, 0, 1);
+    border-bottom: none;
+}
+.navbar {
+    margin-bottom: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 8px 0px;
+    -webkit-transition: all 350ms ease-in-out;
+    -moz-transition: all 350ms ease-in-out;
+    -o-transition: all 350ms ease-in-out;
+    -ms-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+}
+.nav-toggle .icon-bar{
+    width: 50px;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 3px;
+}
+.navbar li a{
+    color: #d9b356;
+    font-weight: 600;
+}
+.navbar li:hover,
+.navbar li a:hover{
+    background-color: #000 !important;
+    color: gold;
+}
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12{
+    z-index: 2;
+}
+header{z-index: 3;}
+.contact-socials {
+    display: inline-block;
+    padding-left: 0;
+}
+.contact-socials li {
+    float: left;
+    width: auto !important;
+    display: inline-block !important;
+    vertical-align: top;
+    clear: none !important;
+    padding: 0;
+}
+.foo_social {
+    text-align: center;
+    color: #999;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    margin: 0 5px;
+    display: block;
+    text-decoration: none;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    background-size: 40px;
+}
+.foo_social.ico-facebook{background: url(../images/ico/svg/flogo-HexRBG-Wht-250-BRC-Site.svg);}
+.foo_social.ico-instagram{background: url(../images/ico/png/64x64/instagram64x64.png);background-size: 40px;}
+/*------------------------------------------*/
+/*	 Footer Social Icons Hover 
+/*------------------------------------------*/
+.foo_social.ico-facebook:hover {background-color: #3b5998; color: #fff;}
+.foo_social.ico-twitter:hover {background-color: #00a9ed; color: #fff;}
+.foo_social.ico-behance:hover {background-color: #00a8e7; color: #fff;}
+.foo_social.ico-google-plus:hover {background-color: #cd1111; color: #fff;}
+.foo_social.ico-linkedin:hover {background-color: #015886; color: #fff;}
+.foo_social.ico-dribbble:hover {background-color: #d92d84; color: #fff;}
+.foo_social.ico-instagram:hover {background-color: #D82BFF; color: #fff;}
+.foo_social.ico-pinterest:hover {background-color: #ac281a; color: #fff;}
+.foo_social.ico-dropbox:hover {background-color: #008ad2; color: #fff;}
+.foo_social.ico-skype:hover {background-color: #00a9ed; color: #fff;}
+.foo_social.ico-youtube:hover {background-color: #cd1b20; color: #fff;}
+.foo_social.ico-tumblr:hover {background-color: #3a5976; color: #fff;}
+.foo_social.ico-vimeo:hover {background-color: #00adee; color: #fff;}
+.foo_social.ico-flickr:hover {background-color: #d2d2d2; color: #fff;}
+.foo_social.ico-github:hover {background-color: #222; color: #fff;}
+.foo_social.ico-renren:hover {background-color: #364a83; color: #fff;}
+.foo_social.ico-vk:hover {background-color: #3b5998; color: #fff;}
+.foo_social.ico-xing:hover  {background-color: #015f5e; color: #fff;}
+.foo_social.ico-weibo:hover  {background-color: #be4443; color: #fff;}
+.foo_social.ico-rss:hover{background-color: #ff6600; color: #fff;}
+.foo_social.ico-digg:hover  {background-color: #222; color: #fff;}
+.foo_social.ico-deviantart:hover {background-color: #57675d; color: #fff;}
+.foo_social.ico-envelope:hover {background-color: #999; color: #fff;}
+.foo_social.ico-delicious:hover {background-color: #0A0A0A; color: #fff;}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+form .image{background-repeat: no-repeat;background-position: 4px;padding-left: 40px;}
+form .image.user{background-image: url(../images/ico/24x24/png/user_white24x24.png) !important;}
+form .image.email{background-image: url(../images/ico/24x24/png/email_white24x24.png) !important;}
+form .image.message{background-image: url(../images/ico/128x128/png/message_white128x128.png) !important;padding-left: 140px;}
+form input, form textarea{color: #ffffff !important;}
+form label{font-weight: bolder;}
+
+#contacts{background-image: url(../images/pattern/email-pattern.jpg);}
+#contacts-form{
+    background-color: rgba(218,179,35,.1);
+    margin-top: 18px;
+    padding: 10px;
+}
+#contacts-form .form-group{margin: 0;}
+#contacts-form input, #contacts-form textarea{background-color: rgba(0,0,0,.8);}
+#contacts-form label{
+    color: #000;
+    font-weight: 900;
+    text-shadow: 0px 0px 13px #E86C0C;
+}
+#contacts-form [type="submit"]{
+    background-color: #d9b356;
+    border-color: #d9b356;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+#chi-sono{
+    background-image: url(../images/pattern/chi-sono.jpg);
+}
+
+#loading,
+#loading img{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+
+#header{
+    height: 50px;
+    position: sticky;
+}
+#header .navbar-brand{margin-top: -9px;}
+#header .navbar-brand,
+#header .navbar-brand img{width: 100px;}
+#header .navbar{height: 100px;}
+
+#navigation-menu{margin-top: 20px;background-color: #000;}
+
+#intro .slideshow, #intro .slideshow .container, #intro .images, #intro img{
+    width: 100% !important;
+    height: auto;
+}
+
+#content_wrapper{
+    margin-top: 50px;
+    min-height: 300px;
+    overflow: hidden;
+}
+#footer {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: #262626;
+}
+#footer p {
+    color: #ddd;
+    line-height: 40px;
+}
+#footer p span {
+    color: #d9b356;
+    font-size: 15px;
+    font-weight: 800;
+}
+#footer h2{color: #D9AE27;}
+#footer_adminmenu{border: 1px solid white;}
+#footer_adminmenu div{
+    display: inline-block;
+    color: #fff;
+    margin-right: 4px;
+}
+#footer_credits .row img{width: 200px;}
+#footer_credits .row div{color: #fff;}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px){
+    .navbar-right {
+        margin-right: 0px !important;
+    }
+}

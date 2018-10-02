@@ -33,3 +33,5 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
+/frontend/views/layouts/main_1.php
+/frontend/views/layouts/main_old.php
