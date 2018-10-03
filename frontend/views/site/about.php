@@ -1,5 +1,5 @@
 <?php
-use app\models\Users;
+use frontend\models\Users;
 
 $users = Users::find()->all();
 $cont = -1;

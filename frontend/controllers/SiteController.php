@@ -12,6 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Portfolio;
 
 /**
  * Site controller
@@ -141,6 +142,18 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function actionPortfolio(){
+        $model = new Portfolio();
+        
+        return $this->render('portfolio', [
+            'model' => $model
+        ]);
     }
 
     /**
