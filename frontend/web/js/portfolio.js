@@ -1,3 +1,8 @@
+/**
+ * Date: 3/10/2018
+ * Revision: 0
+ * Author: Mattia Leonardo Angelillo
+ */
 jQuery(document).ready(function ($){
     $('#portfolio .item-overlay').bind({
         mouseenter : function (e){
