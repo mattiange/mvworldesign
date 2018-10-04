@@ -4,6 +4,9 @@
  * Author: Mattia Leonardo Angelillo
  */
 jQuery(document).ready(function ($){
+    /**
+     * Show hoverlay text
+     */
     $('#portfolio .item-overlay').bind({
         mouseenter : function (e){
             var this_width = $(this).width(),
@@ -19,6 +22,29 @@ jQuery(document).ready(function ($){
         },
         mouseleave : function (e){
             $(this).css('opacity', 0);
+        }
+    });
+    
+    /**
+     * Show selected category
+     */
+    var old_filter;
+    $("#portfolio [data-filter]").click(function (){
+        var filter = $(this).attr('data-filter');
+        
+        if (typeof old_filter === 'undefined') {
+            old_filter = filter;
+            
+            $("#portfolio > [data-category!="+filter+"].filter").hide('drop', 500);
+        }
+        
+        if(filter !== old_filter){
+            old_filter = filter;
+            
+            $("#portfolio > .filter").show();
+            if(filter!=="all"){
+                $("#portfolio > [data-category!="+filter+"].filter").hide('drop', 500);
+            }
         }
     });
 });

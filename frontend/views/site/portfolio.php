@@ -1,20 +1,37 @@
 <?php
+use frontend\models\ServiceCategories;
+
 $cont = 1;
 
-$this->title = 'Portfolio | Vera Bracco';
+$this->title = 'Portfolio'.Yii::$app->name;
 ?>
 <ul id="portfolio">
+    <li class="category">
+        <div class="btn-toolbar">
+            <div class="btn-group col-xs-6 text-center margin-0-a">
+                <div class="btn" data-filter="all">Tutto</div>
+                <?php foreach(ServiceCategories::find()->all() as $k => $v) : ?>
+                <div class="btn" data-filter="<?= $v->id ?>">
+                    <?= $v->service ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </li>
     <?php foreach($model->find()->all() as $k => $v) : ?>
-    <li class="<?= ($cont == 1  || ($cont%5)==0)?'col-md-6':'col-md-3' ?> col-xs-6 col-sm-4 portfolio-item" style="display: inline-block;  opacity: 1;" data-click="fullsize">
-    <!--<li class="col-xs-6 col-sm-4 col-md-3 portfolio-item" style="display: inline-block;  opacity: 1;" data-click="fullsize">-->
+    <?php $service_category_id = ServiceCategories::find()->where(['id' => $v->service_category_id])->asArray()->one() ?>
+    
+    <li class="filter <?= ($cont == 1  || ($cont%5)==0)?'col-md-6':'col-md-3' ?> col-xs-6 col-sm-4 portfolio-item" style="display: inline-block;  opacity: 1;" 
+        data-click="fullsize" data-category="<?= $service_category_id['id'] ?>">
         <div class="hover-overlay">
-            <img src="<?= Yii::getAlias('@web') ?>/images/uploads\portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" />
+            <img src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" />
             
             <a class="image_zoom" title="<?= $v->description ?>">
                 <div class="item-overlay">										
                     <div class="overlay-content">
-                        <h4><?= $v->description ?></h4>
-                        <h5><?= Yii::t('app', 'Cliente') ?>: <?= $v->client ?></h5>
+                        <h4><?= $v->description ?>
+                        
+                        <?= ($v->client != "") ? '<h5><strong>'. Yii::t('app', 'Cliente') .':</strong> ' . $v->client . '</h5>': '' ?>
                     </div>
                 </div>	  
             </a>
@@ -31,10 +48,6 @@ $this->title = 'Portfolio | Vera Bracco';
         <img src="" alt="" src="" />
     </div>
 </div>
-<!--
-<pre>
-    <?php print_r($model) ?>
-</pre>-->
 <?php
 $this->registerCssFile(Yii::getAlias('@web').'/css/showpicture.css');
 $this->registerJsFile(Yii::getAlias('@web').'/js/portfolio.js',  [
