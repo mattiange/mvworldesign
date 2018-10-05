@@ -32,19 +32,19 @@ jQuery(document).ready(function ($){
     $("#portfolio [data-filter]").click(function (){
         var filter = $(this).attr('data-filter');
         
-        if (typeof old_filter === 'undefined') {
-            old_filter = filter;
+        if (typeof old_filter === 'undefined' && filter !=="all") {
+            alert("ALL");
             
             $(this).addClass('active');
             $("#portfolio > [data-category!="+filter+"].filter").hide('drop', 500);
         }
         
         if(filter !== old_filter){
+            $("#portfolio [data-filter]").removeClass('active');
+            if(typeof old_filter !== 'undefined'){$(this).addClass('active');}
+            
             old_filter = filter;
             
-            $("#portfolio [data-filter]").removeClass('active');
-            
-            $(this).addClass('active');
             $("#portfolio > .filter").show();
             if(filter!=="all"){
                 $("#portfolio > [data-category!="+filter+"].filter").hide('drop', 500);
