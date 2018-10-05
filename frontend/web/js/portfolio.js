@@ -35,12 +35,16 @@ jQuery(document).ready(function ($){
         if (typeof old_filter === 'undefined') {
             old_filter = filter;
             
+            $(this).addClass('active');
             $("#portfolio > [data-category!="+filter+"].filter").hide('drop', 500);
         }
         
         if(filter !== old_filter){
             old_filter = filter;
             
+            $("#portfolio [data-filter]").removeClass('active');
+            
+            $(this).addClass('active');
             $("#portfolio > .filter").show();
             if(filter!=="all"){
                 $("#portfolio > [data-category!="+filter+"].filter").hide('drop', 500);

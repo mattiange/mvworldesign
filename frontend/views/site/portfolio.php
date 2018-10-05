@@ -8,7 +8,7 @@ $this->title = 'Portfolio'.Yii::$app->name;
 <ul id="portfolio">
     <li class="category">
         <div class="btn-toolbar">
-            <div class="btn-group col-xs-6 text-center margin-0-a">
+            <div class="btn-group">
                 <div class="btn" data-filter="all">Tutto</div>
                 <?php foreach(ServiceCategories::find()->all() as $k => $v) : ?>
                 <div class="btn" data-filter="<?= $v->id ?>">
