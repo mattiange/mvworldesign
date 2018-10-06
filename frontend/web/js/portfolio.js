@@ -33,8 +33,6 @@ jQuery(document).ready(function ($){
         var filter = $(this).attr('data-filter');
         
         if (typeof old_filter === 'undefined' && filter !=="all") {
-            alert("ALL");
-            
             $(this).addClass('active');
             $("#portfolio > [data-category!="+filter+"].filter").hide('drop', 500);
         }

@@ -12,9 +12,10 @@ jQuery(document).ready(function ($){
         var src = $('img', this).attr('src'),
             alt = $('img', this).attr('alt'),
             title = $('img', this).attr('title'),
-            margin_top = ($(window).height()-$('img', this).height())/2;
-        if(margin_top<0){margin_top = ($(window).height()-$("[data-max-height]",this).attr('data-max-height'))/2;}
-        
+            margin_top = ($(window).height()-$("[data-max-height]",this).attr('data-max-height'))/2;
+            
+            if($("img", this).height()<$("[data-max-height]", this).attr('data-max-height')){margin_top = ($(window).height()-$("img",this).height())/2}
+            
             $('body').css('overflow', 'hidden');
             $('.wrapper-img', id).css('margin-top', margin_top);
             $('img', id).attr({
