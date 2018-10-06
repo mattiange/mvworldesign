@@ -8,13 +8,26 @@ jQuery(document).ready(function ($){
         id = '#showpicture',
         exit_id = '.exit';
     $(id_click).bind('click', function (){
+        showpicture(this, id);
+    });
+    $(exit_id, id).bind('click', function (){
+        $(id).hide();
+        $('body').css('overflow', 'auto');
+    });
+    
+    $(window).resize(function (){
+        showpicture(id_click, id);
+    });
+    
+    
+    function showpicture(_this, id){
         $(id).show();
-        var src = $('img', this).attr('src'),
-            alt = $('img', this).attr('alt'),
-            title = $('img', this).attr('title'),
-            margin_top = ($(window).height()-$("[data-max-height]",this).attr('data-max-height'))/2;
+        var src = $('img', _this).attr('src'),
+            alt = $('img', _this).attr('alt'),
+            title = $('img', _this).attr('title'),
+            margin_top = ($(window).height()-$("[data-max-height]",_this).attr('data-max-height'))/2;
             
-            if($("img", this).height()<$("[data-max-height]", this).attr('data-max-height')){margin_top = ($(window).height()-$("img",this).height())/2}
+            if($("img", _this).height()<$("[data-max-height]", _this).attr('data-max-height')){margin_top = ($(window).height()-$("img",_this).height())/2}
             
             $('body').css('overflow', 'hidden');
             $('.wrapper-img', id).css('margin-top', margin_top);
@@ -23,9 +36,5 @@ jQuery(document).ready(function ($){
                 alt : alt,
                 title : title
             });
-    });
-    $(exit_id, id).bind('click', function (){
-        $(id).hide();
-        $('body').css('overflow', 'auto');
-    });
+    }
 });
