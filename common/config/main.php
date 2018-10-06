@@ -1,6 +1,5 @@
 <?php
 return [
-    'name' => ' | M&V World Design',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',

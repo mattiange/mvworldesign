@@ -21,12 +21,13 @@
 }
 #showpicture .wrapper-img img{
     vertical-align: middle;
-    width: 100%;
+    max-width: 100%;
+    max-height: 412px;
 }
 #showpicture .exit{
     position: absolute;
-    top: -6px;
-    right: -4px;
+    top: 10px;
+    right: 10px;
     color: #000;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;

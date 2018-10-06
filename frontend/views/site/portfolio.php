@@ -21,10 +21,10 @@ $this->title = 'Portfolio'.Yii::$app->name;
     <?php foreach($model->find()->all() as $k => $v) : ?>
     <?php $service_category_id = ServiceCategories::find()->where(['id' => $v->service_category_id])->asArray()->one() ?>
     
-    <li class="filter <?= ($cont == 1  || ($cont%5)==0)?'col-md-6':'col-md-3' ?> col-xs-6 col-sm-4 portfolio-item" style="display: inline-block;  opacity: 1;" 
+    <li class="filter col-md-3 col-xs-6 col-sm-4 portfolio-item" style="display: inline-block;  opacity: 1;" 
         data-click="fullsize" data-category="<?= $service_category_id['id'] ?>">
         <div class="hover-overlay">
-            <img src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" />
+            <img src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />
             
             <a class="image_zoom" title="<?= $v->description ?>">
                 <div class="item-overlay">										
@@ -42,11 +42,8 @@ $this->title = 'Portfolio'.Yii::$app->name;
 </ul>
 
 <div id="showpicture" style="display: none;">
-    <div class="wrapper-img">
-        <div class="exit glyphicon glyphicon-remove"></div>
-
-        <img src="" alt="" src="" />
-    </div>
+    <div class="exit glyphicon glyphicon-remove"></div>
+    <div class="wrapper-img text-center"><img src="" alt="" src="" /></div>
 </div>
 <?php
 $this->registerCssFile(Yii::getAlias('@web').'/css/showpicture.css');
