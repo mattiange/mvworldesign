@@ -13,6 +13,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Portfolio;
+use frontend\models\Services;
 
 /**
  * Site controller
@@ -153,6 +154,19 @@ class SiteController extends Controller
         
         return $this->render('portfolio', [
             'model' => $model
+        ]);
+    }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function actionWeb()
+    {
+        $model = Services::find()->where(['category_id' => 2])->orderBy('position')->asArray()->all();
+        
+        return $this->render('web', [
+            'model' => $model,
         ]);
     }
 

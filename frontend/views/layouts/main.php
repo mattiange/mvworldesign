@@ -15,9 +15,9 @@ use frontend\models\MenuItem;
 AppAsset::register($this);
 
 
-$mainmenu = MenuItem::find()->where('menu_id=1')->asArray()->all();
+$mainmenu = MenuItem::find()->where('menu_id=1')->orderBy('position')->asArray()->all();
 foreach ($mainmenu as $k_mn => $v_mn){
-    $menuItems[] = ['label' => $v_mn['menu_item'], 'url' => [$v_mn['controller'].'/'.$v_mn['model']]];
+    $menuItems[] = ['label' => $v_mn['menu_item'], 'url' => [$v_mn['controller'].'/'.$v_mn['view']]];
 }
 ?>
 <?php $this->beginPage() ?>

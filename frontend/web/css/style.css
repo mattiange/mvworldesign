@@ -65,6 +65,7 @@ ul {
     padding: 0;
     list-style: none;
 }
+h1{color: rgb(207,181,59);}
 .none{display: none;}
 .c-left{clear: left;}
 .c-right{clear: rigth;}
@@ -258,6 +259,23 @@ form label{font-weight: bolder;}
 }
 #about{
     background-image: url(../images/pattern/about.jpg);
+}
+#services h3{
+    margin: 0;
+    font-size: 17px;
+    line-height: 24px;
+    text-transform: capitalize;
+}
+#services h3{
+    transition: all 2s;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+}
+#services .cover{
+    border: 1px solid red;
+    width: 64px;
+    height: 64px;
 }
 #porfolio{margin: 0;}
 #portfolio .portfolio-item{
