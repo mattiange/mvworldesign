@@ -1,7 +1,7 @@
 <?php
 $this->title = "Web Design".Yii::$app->name;
 ?>
-<h1 class="text-center">Web Design</h1>
+<h1 class="text-center"><?= Yii::t('app', 'Web Design') ?></h1>
 
 <div id="services" class="wrapper margin-0-a">
     <div class="container margin-0-a">

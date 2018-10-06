@@ -169,6 +169,19 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function actionGraphic()
+    {
+        $model = Services::find()->where(['category_id' => 1])->orderBy('position')->asArray()->all();
+        
+        return $this->render('graphic', [
+            'model' => $model,
+        ]);
+    }
 
     /**
      * Signs user up.
