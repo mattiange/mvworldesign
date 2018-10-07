@@ -101,18 +101,17 @@ foreach ($mainmenu as $k_mn => $v_mn){
     </header>
     
     <div id="content_wrapper">
+        <div class="breadcrumbs">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+        </div>
         <?= Alert::widget() ?>
-        
         <?= $content ?>
     </div>
     
     <footer id="footer">
         <div class="container">
-            <div class="breadcrumbs">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) ?>
-            </div>
             <?php if(!Yii::$app->user->isGuest) : ?>
             <!-- FOOTER ADMIN MENU -->
             <div class="row">
