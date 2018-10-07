@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>  
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <h3 class="widget-title style1"><?= Yii::t('app', 'Richiedici un preventivo') ?></h3>
-                            <p class="info_form">I campi con  <span class="asterisco">(*)</span> sono obbligatori.</p>
                             <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
                                 <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
@@ -42,6 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
                                 ]) ?>
+                                
+                                Inviando l'email accetti la nostra <a href="#" title="leggi la nostra informativa" class="informativa_link" target="_blank">informativa sulla privacy</a>
 
                                 <div class="form-group">
                                     <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>

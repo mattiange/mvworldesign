@@ -263,7 +263,7 @@ form .image{background-repeat: no-repeat;background-position: 4px;padding-left: 
 form .image.user{background-image: url(../images/ico/24x24/png/user_white24x24.png) !important;}
 form .image.email{background-image: url(../images/ico/24x24/png/email_white24x24.png) !important;}
 form .image.message{background-image: url(../images/ico/128x128/png/message_white128x128.png) !important;padding-left: 140px;}
-form input, form textarea{color: #ffffff !important;}
+form input, form textarea{color: #d9b356 !important;}
 form label{font-weight: bolder;}
 
 #contacts{background-image: url(../images/pattern/email-pattern.jpg);}
@@ -433,4 +433,14 @@ form label{font-weight: bolder;}
     .navbar-right {
         margin-right: 0px !important;
     }
+}
+@media (max-width: 767px){
+#header .navbar-nav{
+    background-color: #000;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    margin: 0;
+}
+#header .navbar-nav li{float: none;}
 }

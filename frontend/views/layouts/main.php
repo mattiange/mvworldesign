@@ -67,12 +67,6 @@ foreach ($mainmenu as $k_mn => $v_mn){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                 </button>
-
-                <!-- Logo Image -->
-                <!--<a class="navbar-brand" href="<?= Url::home(); ?>">
-                    <img src="<?= Yii::getAlias('@web') ?>/" alt="logo" role="banner" alt="Vera Bracco Graphic Designer" />
-                </a>-->
-
             </div>
             <!-- Navigation Menu -->
             <?php
@@ -107,6 +101,8 @@ foreach ($mainmenu as $k_mn => $v_mn){
     </header>
     
     <div id="content_wrapper">
+        <?= Alert::widget() ?>
+        
         <?= $content ?>
     </div>
     
@@ -116,7 +112,6 @@ foreach ($mainmenu as $k_mn => $v_mn){
                 <?= Breadcrumbs::widget([
                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                 ]) ?>
-                <?= Alert::widget() ?>
             </div>
             <?php if(!Yii::$app->user->isGuest) : ?>
             <!-- FOOTER ADMIN MENU -->
