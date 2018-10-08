@@ -51,5 +51,8 @@ $this->registerJsFile(Yii::getAlias('@web').'/js/portfolio.js',  [
     'depends' => [yii\web\JqueryAsset::className()]
 ]);
 $this->registerJsFile(Yii::getAlias('@web').'/js/showpicture.js',  [
-    'depends' => [yii\web\JqueryAsset::className()]
+    'depends' => [
+        yii\web\JqueryAsset::className(),
+        yii\jui\JuiAsset::className()
+    ]
 ]);
