@@ -22,9 +22,13 @@ $this->title = 'Portfolio'.Yii::$app->name;
     <?php $service_category_id = ServiceCategories::find()->where(['id' => $v->service_category_id])->asArray()->one() ?>
     
     <li class="filter col-md-3 col-xs-6 col-sm-4 portfolio-item" style="display: inline-block;  opacity: 1;" 
-        data-click="fullsize" data-category="<?= $service_category_id['id'] ?>">
+        data-click="fullsize" data-category="<?= $service_category_id['id'] ?>" data-mime="<?= $v->type ?>">
         <div class="hover-overlay">
+            <?php if($v->type != "application/pdf"): ?>
             <img src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />
+            <?php else : ?>
+            <embed src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" width="100%" height="100%" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" ><br>
+            <?php endif; ?>
             
             <a class="image_zoom" title="<?= $v->description ?>">
                 <div class="item-overlay">										
