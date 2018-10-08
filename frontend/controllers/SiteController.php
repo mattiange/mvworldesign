@@ -195,6 +195,24 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    
+    /**
+     * 
+     * 
+     * @return type
+     */
+    public function actionPrivacy(){
+        return $this->render('privacy');
+    }
+    
+    /**
+     * 
+     * 
+     * @return type
+     */
+    public function actionCookie(){
+        return $this->render('cookie');
+    }
 
     /**
      * Signs user up.
