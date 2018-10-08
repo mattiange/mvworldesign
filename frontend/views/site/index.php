@@ -2,52 +2,38 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = Yii::t('app', 'Siti web, SEO, loghi').Yii::$app->name;
 ?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
+<section>
+    <div class="wrapper margin-0-a">
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="widget home-widget">
+                    <div class="slider-content">
+                        <div class="fraction-slider">
+                            <div class="slide" data-step="1">
+                                <img src="http://www.momowebagency.com/images/fraction/2/1.png" data-delay="0" />
+                                <img src="http://www.momowebagency.com/images/fraction/2/2.png" data-delay="500" />
+                                <img src="http://www.momowebagency.com/images/fraction/2/3.png" data-delay="1000" />
+                                <img src="http://www.momowebagency.com/images/fraction/2/4.png" data-delay="1500" />
+                                <span class="text-right" data-delay="2000" data-top="10" data-right="0">Web Design, realizzazione siti e portali web in ottica SEO</span>
+                                <span class="text-right" data-delay="2500" data-top="60" data-right="0">Grafica, immagine, comunicazione, pubblicità</span>
+                                <span class="text-right" data-delay="2500" data-top="110" data-right="0">Facebook Advertising, Google Adword e pey per click</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
             </div>
         </div>
-
     </div>
-</div>
+</section>
+<?php
+$this->registerCssFile(Yii::getAlias('@web').'/css/home-widget.css', [
+    'depends' => 'yii\bootstrap\BootstrapAsset',
+]);
+$this->registerJsFile(Yii::getAlias('@web').'/js/home-widget.jquery.js',  [
+    'depends' => [
+        yii\web\JqueryAsset::className(),
+        yii\jui\JuiAsset::className()
+    ]
+]);

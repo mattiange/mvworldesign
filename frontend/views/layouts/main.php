@@ -50,6 +50,10 @@ foreach ($mainmenu as $k_mn => $v_mn){
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/regular.css" integrity="sha384-ZlNfXjxAqKFWCwMwQFGhmMh3i89dWDnaFU2/VZg9CvsMGA7hXHQsPIqS+JIAmgEq" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -141,7 +145,7 @@ foreach ($mainmenu as $k_mn => $v_mn){
             <!-- FOOTER COPYRIGHT -->
             <div class="row">						
                 <div id="footer_copyright" class="col-sm-12 text-center">		
-                    <p><?= date('Y') ?> &copy; <span>Vera Bracco - Graphic Designer</span>.  All Rights Reserved.</p>	
+                    <p><?= date('Y') ?> &copy; <span>M&V World Design</span>.  All Rights Reserved.</p>	
                 </div>
             </div>
                 
@@ -157,69 +161,6 @@ foreach ($mainmenu as $k_mn => $v_mn){
                 </div>
             </div>
             <!-- END FOOTER SOCIALS -->
-            <!-- FOOTER CREDITS -->
-            <div class="row">
-                <div id="footer_credits" class="col-sm-12 text-center">
-                    <h2 class="bottom_line-gold">Credits</h2>
-                    <div class="row">
-                        <div class="col-sm-6 vera-graphic">
-                            <div class="row">
-                                <div class="img col-sm-4">
-                                    <a href="<?= Yii::getAlias('@web').'/images/ico/credits/vera-bracco-grapgic-designer.png' ?>" target="_blank">
-                                        <img src="<?= Yii::getAlias('@web').'/images/ico/credits/vera-bracco-graphic-designer.png' ?>" alt="Vera Bracco Graphic Designer" />
-                                    </a>
-                                </div>
-                                <div class="description col-sm-8">
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Facebook:</div>
-                                        <div class="col-sm-9 text-left"><a href="https://www.facebook.com/Vera-Bracco-Graphic-Design-1589578704479826/" target="_blank">Vera Bracco - Graphic Designer</a></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Instagam:</div>
-                                        <div class="col-sm-9 text-left"><a href="" target="_blank"></a></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Email:</div>
-                                        <div class="col-sm-9 text-left"><a href="mailto: verabracco.official@gmail.com">verabracco.official@gmail.com</a></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Telefono:</div>
-                                        <div class="col-sm-9 text-left"><a href="tel: 3889738229">388 973 8229</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 mattia-webmaster">
-                            <div class="row">
-                                <div class="img col-sm-5">
-                                    <a href="<?= Yii::getAlias('@web').'/images/ico/credits/mattia-angelillo-web-designer.jpg' ?>" target="_blank">
-                                        <img src="<?= Yii::getAlias('@web').'/images/ico/credits/mattia-angelillo-web-designer.jpg' ?>" alt="Mattia Angelillo Web Designer" />
-                                    </a>
-                                </div>
-                                <div class="description col-sm-7">
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Facebook:</div>
-                                        <div class="col-sm-9 text-left"><a href="https://www.facebook.com/mattia.angelillo" target="_blank">Mattia L- Angelillo - Web Designer</a></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Instagam:</div>
-                                        <div class="col-sm-9 text-left"><a href="https://www.instagram.com/mattiangelillo/" target="_blank">@mattiangelillo</a></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Email:</div>
-                                        <div class="col-sm-9 text-left"><a href="mailto: mattia.angelillo@gmail.com">mattia.angelillo@gmail.com</a></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3 text-right">Telefono:</div>
-                                        <div class="col-sm-9 text-left"><a href="tel: 3348768832">334 876 8832</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END FOOTER CREDITS -->
         </div>
         <!-- End container -->							
     </footer>
