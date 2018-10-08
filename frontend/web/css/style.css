@@ -65,9 +65,11 @@ ul {
     padding: 0;
     list-style: none;
 }
-h1{color: rgb(207,181,59);}
+h1{color: rgb(207,181,59);text-align: center;}
 header{z-index: 3;}
 label {font-weight: 400;}
+.list{margin: 10px 0 10px 50px;}
+.list.list-style-circle{list-style-type: circle;}
 .none{display: none;}
 .c-left{clear: left;}
 .c-right{clear: rigth;}

@@ -5,6 +5,7 @@
 /* @var $model \frontend\models\ContactForm */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
@@ -42,8 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
                                 ]) ?>
                                 
-                                Inviando l'email accetti la nostra <a href="#" title="leggi la nostra informativa" class="informativa_link" target="_blank">informativa sulla privacy</a>
-
+                                Proseguendo accetti la nostra <a href="<?= Url::to(['site/privacy']) ?>" target="_blank" rel="noindex">Privacy Policy</a>
+                                
                                 <div class="form-group">
                                     <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                                 </div>
