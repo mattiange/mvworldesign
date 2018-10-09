@@ -12,10 +12,10 @@ $this->title = Yii::t('app', 'Siti web, SEO, loghi').Yii::$app->name;
                     <div class="slider-content">
                         <div class="fraction-slider">
                             <div class="slide" data-step="1">
-                                <img src="http://www.momowebagency.com/images/fraction/2/1.png" data-delay="0" />
-                                <img src="http://www.momowebagency.com/images/fraction/2/2.png" data-delay="500" />
-                                <img src="http://www.momowebagency.com/images/fraction/2/3.png" data-delay="1000" />
-                                <img src="http://www.momowebagency.com/images/fraction/2/4.png" data-delay="1500" />
+                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/1.png" data-delay="0" />
+                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/2.png" data-delay="500" />
+                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/3.png" data-delay="1000" />
+                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/4.png" data-delay="1500" />
                                 <span class="text-right" data-delay="2000" data-top="10" data-right="0">Web Design, realizzazione siti e portali web in ottica SEO</span>
                                 <span class="text-right" data-delay="2500" data-top="60" data-right="0">Grafica, immagine, comunicazione, pubblicità</span>
                                 <span class="text-right" data-delay="2500" data-top="110" data-right="0">Facebook Advertising, Google Adword e pey per click</span>
