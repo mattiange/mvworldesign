@@ -328,7 +328,6 @@ form label{font-weight: bolder;}
     -o-transition: all 2s;
 }
 #services .cover{
-    border: 1px solid red;
     width: 64px;
     height: 64px;
 }
