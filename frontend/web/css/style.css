@@ -244,8 +244,20 @@ label {font-weight: 400;}
     transition: all 250ms ease-in-out;
     background-size: 40px;
 }
-.foo_social.ico-facebook{background: url(../images/ico/svg/flogo-HexRBG-Wht-250-BRC-Site.svg);}
-.foo_social.ico-instagram{background: url(../images/ico/png/64x64/instagram64x64.png);background-size: 40px;}
+.foo{
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-size: 32px;
+    line-height: 31px;
+}
+.foo.ico-facebook{background-image: url(../images/ico/png/32x32/facebook-logo-on-square32x32.png);}
+.foo.ico-instagram{background-image: url(../images/ico/png/32x32/instagram32x32.png);}
+.foo.ico-pinterest{background-image: url(../images/ico/png/32x32/pinterest32x32.png);}
+.foo.ico-email{background-image: url(../images/ico/png/32x32/email32x32.png);}
+.foo.ico-whatsapp{background-image: url(../images/ico/png/32x32/whatsapp32x32.png);}
+.foo_social.ico-facebook{background-image: url(../images/ico/svg/flogo-HexRBG-Wht-250-BRC-Site.svg);}
+.foo_social.ico-instagram{background-image: url(../images/ico/png/64x64/instagram64x64.png);background-size: 40px};
 /*------------------------------------------*/
 /*	 Footer Social Icons Hover 
 /*------------------------------------------*/
@@ -290,7 +302,10 @@ form .image.message{background-image: url(../images/ico/128x128/png/message_whit
 form input, form textarea{color: #d9b356 !important;}
 form label{font-weight: bolder;}
 
-#contacts{background-image: url(../images/pattern/email-pattern.jpg);}
+#contacts{background-image: url(../images/pattern/contacts.jpg);}
+#contacts .contact li{height: 40px;}
+#contacts .contact li span{margin-right: 10px;}
+#contacts a{color: #000;line-height: 31px;font-weight: 900;}
 #contacts-form{
     background-color: rgba(218,179,35,.1);
     margin-top: 18px;

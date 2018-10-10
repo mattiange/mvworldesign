@@ -18,7 +18,7 @@ $this->title = Yii::t('app', 'Siti web, SEO, loghi').Yii::$app->name;
                                 <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/4.png" data-delay="1500" />
                                 <span class="text-right" data-delay="2000" data-top="10" data-right="0">Web Design, realizzazione siti e portali web in ottica SEO</span>
                                 <span class="text-right" data-delay="2500" data-top="60" data-right="0">Grafica, immagine, comunicazione, pubblicità</span>
-                                <span class="text-right" data-delay="2500" data-top="110" data-right="0">Facebook Advertising, Google Adword e pey per click</span>
+                                <span class="text-right" data-delay="2500" data-top="110" data-right="0">Facebook Advertising, Google Adword e pay per click</span>
                             </div>
                         </div>
                     </div>

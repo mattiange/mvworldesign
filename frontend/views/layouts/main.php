@@ -17,7 +17,18 @@ AppAsset::register($this);
 
 $mainmenu = MenuItem::find()->where('menu_id=1')->orderBy('position')->asArray()->all();
 foreach ($mainmenu as $k_mn => $v_mn){
-    $menuItems[] = ['label' => $v_mn['menu_item'], 'url' => [$v_mn['controller'].'/'.$v_mn['view']]];
+    if($v_mn['controller']=='site' && ($v_mn['view']=='index' || $v_mn['view']=='')){
+        $link = Yii::$app->request->hostInfo;;
+    }else{
+        $link = [$v_mn['controller'].'/'.$v_mn['view']];
+    }
+    $menuItems[] = [
+        'label' => $v_mn['menu_item'], 
+        'url' => $link, 
+        'linkOptions' => [
+            'rel'=>'canonical'
+        ]
+    ];
 }
 ?>
 <?php $this->beginPage() ?>
@@ -154,8 +165,8 @@ foreach ($mainmenu as $k_mn => $v_mn){
                 <div id="footer_socials" class="col-sm-12 text-center">
                     <div id="contact_icons">																	
                         <ul class="contact-socials clearfix">
-                            <li><a class="foo_social ico-facebook" href="http://facebook.com/graficanexus6."><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="foo_social ico-instagram" href="https://www.instagram.com/vera_graphicdesigner/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a class="foo_social ico-facebook" href="https://www.facebook.com/mvworldesign/" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="foo_social ico-instagram" href="https://www.instagram.com/mvworldesign/" target="_blank" rel="nofollow"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

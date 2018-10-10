@@ -13,7 +13,7 @@ $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<section id="contact">
+<section id="contacts">
     <div class="wrapper margin-0-a">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -22,9 +22,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <h3 class="widget-title style1"><?= Yii::t('app', 'Contatti') ?></h3>
                             <p></p>
-                            <ul class="clearfix">
-                                <li><p style="margin-bottom: 0px;"><span class="fa fa-envelope-o"></span>Email: <a href="mailto:info@mvworldesign.com">info@mvworldesign.com</a></p></li>
-                                <li><p style="margin-bottom: 0px;"><span class="fa fa-phone"></span>Cellulare: <a href="callto: 3358768832">(+39) 335 8768832</a> - <a href="callto: 3889738229">(+39) 388 9738229</a></p></li>
+                            <ul class="clearfix contact">
+                                <li><p><span class="foo ico-email f-left"></span>Email: <a href="mailto:info@mvworldesign.com">info@mvworldesign.com</a></p></li>
+                                <li><p><span class="foo ico-whatsapp f-left"></span>Cellulare: <a href="callto: 3358768832">(+39) 335 8768832</a> - <a href="callto: 3889738229">(+39) 388 9738229</a></p></li>
+                                <li><p><span class="foo ico-facebook f-left"></span><a href="" rel="noindex" target="_blank">Facebook</a></p></li>
+                                <li><p><span class="foo ico-instagram f-left"></span><a href="" rel="noindex" target="_blank">Instagram</a></p></li>
+                                <li><p><span class="foo ico-pinterest f-left"></span><a href="" rel="noindex" target="_blank">Pinterest</a></p></li>
                             </ul>
                         </div>  
                         <div class="col-md-6 col-sm-6 col-xs-12">
