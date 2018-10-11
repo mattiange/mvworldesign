@@ -1,5 +1,14 @@
 <?php
 $this->title = "Web Marketing".Yii::$app->name;
+$this->params['breadcrumbs'][] = 'Web Marketing';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Fai pubblicità su internet, fatti strada nel web con campagne adwords per promuovere la tua attività, grazie a facebook e Google Adwords',
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'web agency, adv facebook, fare pubblicità su internet, campagna adwords, come fare pubblicità su internet',
+]);
 ?>
 <h1 class="text-center"><?= Yii::t('app', 'Web Marketing') ?></h1>
 

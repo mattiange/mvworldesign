@@ -4,6 +4,15 @@ use frontend\models\ServiceCategories;
 $cont = 1;
 
 $this->title = 'Portfolio'.Yii::$app->name;
+$this->params['breadcrumbs'][] = 'Portfolio';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Tutti i nostri lavori,biglietti da visita,immagine coordinata,siti web,loghi,riviste. Fai il tuo preventivo 3348768832, info@mvworldesign.com',
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'portfolio, portfolio grafico, web designer, graphic designer',
+]);
 ?>
 <ul id="portfolio">
     <li class="category">

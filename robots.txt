@@ -1,0 +1,3 @@
+Sitemap: https://www.mvworldesign.com/sitemap.xml
+User-agent: *
+Disallow: /backend/
