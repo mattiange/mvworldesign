@@ -1,5 +1,6 @@
 <?php
 $this->title = "Web Design".Yii::$app->name;
+$this->params['breadcrumbs'][] = 'Web Design';
 ?>
 <h1 class="text-center"><?= Yii::t('app', 'Web Design') ?></h1>
 
