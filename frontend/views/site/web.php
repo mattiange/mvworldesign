@@ -1,6 +1,10 @@
 <?php
 $this->title = "Web Design".Yii::$app->name;
 $this->params['breadcrumbs'][] = 'Web Design';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Vuoi un sito web visualizzabile su ogni dispostivo? La nostra web agency fa al caso tuo, contattaci 3348768832, info@mvworldesign.com',
+]);
 ?>
 <h1 class="text-center"><?= Yii::t('app', 'Web Design') ?></h1>
 
