@@ -147,6 +147,7 @@ class SiteController extends Controller
     
     /**
      * 
+     * 
      * @return type
      */
     public function actionPortfolio(){
@@ -158,6 +159,7 @@ class SiteController extends Controller
     }
     
     /**
+     * 
      * 
      * @return type
      */
@@ -172,6 +174,7 @@ class SiteController extends Controller
     
     /**
      * 
+     * 
      * @return type
      */
     public function actionGraphic()
@@ -185,11 +188,12 @@ class SiteController extends Controller
     
     /**
      * 
+     * 
      * @return type
      */
     public function actionMarketing()
     {
-        $model = Services::find()->where(['category_id' => 3])->orderBy('position')->asArray()->one();
+        $model = Services::find()->where(['category_id' => 3])->orderBy('position')->asArray()->all();
         
         return $this->render('marketing', [
             'model' => $model,

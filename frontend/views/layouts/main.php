@@ -12,13 +12,15 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use frontend\models\MenuItem;
 
+Yii::setAlias('@index', 'https://www.mvworldesign.com/');
+
 AppAsset::register($this);
 
 
 $mainmenu = MenuItem::find()->where('menu_id=1')->orderBy('position')->asArray()->all();
 foreach ($mainmenu as $k_mn => $v_mn){
     if($v_mn['controller']=='site' && ($v_mn['view']=='index' || $v_mn['view']=='')){
-        $link = Yii::$app->request->hostInfo;;
+        $link = Yii::$app->request->hostInfo;
     }else{
         $link = [$v_mn['controller'].'/'.$v_mn['view']];
     }
@@ -87,7 +89,7 @@ foreach ($mainmenu as $k_mn => $v_mn){
             <?php
             NavBar::begin([
                 'brandLabel' => Html::img('@web/images/ico/logo/png/logo-MV-bianco-su-sfondo-nero__100x71.png', ['alt'=>'Logo M&V World Design', 'title' => 'M&V World Design']),
-                'brandUrl' => Yii::$app->homeUrl,
+                'brandUrl' => Yii::getAlias('@index'),
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
