@@ -45,6 +45,10 @@ return [
                 '/index.php/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
                 '/index.php/<controller:\w+>/<id:\d+>/<title>'=>'<controller>/view',
                 '/index.php/<controller:\w+>/<id:\d+>'=>'<controller>/view',
+                
+                '/index.php/<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '/index.php/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '/index.php/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
         ],
     ],

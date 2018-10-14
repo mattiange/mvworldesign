@@ -1,3 +1,5 @@
-Sitemap: https://www.mvworldesign.com/sitemap.xml
+Sitemap: https://www.mvworldesign.com/sitemap-index.xml
 User-agent: *
 Disallow: /backend/
+Disallow: https://www.mvworldesign.com/frontend/web/index.php/site/privacy
+Disallow: https://www.mvworldesign.com/frontend/web/index.php/site/cookie

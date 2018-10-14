@@ -1,4 +1,6 @@
 <?php
+use yii\helpers\Url;
+
 $this->title = "Web Design".Yii::$app->name;
 $this->params['breadcrumbs'][] = 'Web Design';
 $this->registerMetaTag([
@@ -17,7 +19,7 @@ $this->registerMetaTag([
                     <img src="<?= $v['cover'] ?>" src="" alt="" />
                 </div>
                 <div class="category col-sm-8">
-                    <h3> <a href=""><?= $v['service'] ?></a></h3>
+                    <h3> <a href="<?= ($v['text']!="")?Url::to(['site/service', 'id'=>$v['id']]):'#' ?>"><?= $v['service'] ?></a></h3>
                     <p class="intro_text"><?= $v['intro_text'] ?></p>
                 </div>
             </div>

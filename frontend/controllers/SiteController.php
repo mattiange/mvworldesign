@@ -189,13 +189,28 @@ class SiteController extends Controller
      */
     public function actionMarketing()
     {
-        $model = Services::find()->where(['category_id' => 3])->orderBy('position')->asArray()->all();
+        $model = Services::find()->where(['category_id' => 3])->orderBy('position')->asArray()->one();
         
         return $this->render('marketing', [
             'model' => $model,
         ]);
     }
     
+    /**
+     * 
+     * 
+     * @param type $id
+     * @return type
+     */
+    public function actionService($id){
+        $model = Services::find()->where(['id' => $id])->asArray()->all();
+        
+        return $this->render('service', [
+            'model' => $model
+        ]);
+    }
+
+
     /**
      * 
      * 
