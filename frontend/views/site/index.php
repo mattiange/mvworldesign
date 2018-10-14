@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 $this->title = Yii::t('app', 'Siti web, SEO, loghi').Yii::$app->name;
+//$this->params['breadcrumbs'][] = null;
 $this->registerMetaTag([
     'name' => 'description',
     'content' => 'Offriamo servizi quali realizzazione di siti web vetrina, e-commerce, loghi, impaginazione di riviste e giornali e  web marketing',

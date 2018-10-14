@@ -1,6 +1,6 @@
 <?php
 $this->title = "Graphic Design".Yii::$app->name;
-$this->params['breadcrumbs'][] = 'Graphic Design';
+//$this->params['breadcrumbs'][] = 'Graphic Design';
 $this->registerMetaTag([
     'name' => 'description',
     'content' => 'Realizziamo il tuo logo aziendale con presentazione e immagine coordinata.  Vuoi aprire un giornale? Noi facciamo al caso tuo,scrivici info@mvworldesign.com',

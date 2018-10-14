@@ -10,7 +10,7 @@ use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
 $this->title = 'Contact'.Yii::$app->name;
-$this->params['breadcrumbs'][] = 'Contattaci';
+//$this->params['breadcrumbs'][] = 'Contattaci';
 $this->registerMetaTag([
     'name' => 'description',
     'content' => 'Siti web,SEO,loghi,grafica pubblicitaria e editoriale.Affidati alla nostra professionalità,richiedi un preventivo gratuito 3348768832,info@mvworldesign.com',

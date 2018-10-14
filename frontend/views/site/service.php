@@ -1,7 +1,6 @@
 <?php
 $this->title = $model[0]['service'].Yii::$app->name;
-$this->params['breadcrumbs'][] = $model[0]['service'];
-$this->params['breadcrumbs'][] = 'Web Design';
+//$this->params['breadcrumbs'][] = $model[0]['service'];
 $this->registerMetaTag([
     'name' => 'description',
     'content' => $model[0]['meta_description'],
