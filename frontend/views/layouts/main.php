@@ -67,6 +67,13 @@ foreach ($mainmenu as $k_mn => $v_mn){
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/regular.css" integrity="sha384-ZlNfXjxAqKFWCwMwQFGhmMh3i89dWDnaFU2/VZg9CvsMGA7hXHQsPIqS+JIAmgEq" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+    <!--[if gte IE 9]>
+    <style type="text/css">
+      .gradient {
+         filter: none;
+      }
+    </style>
+    <![endif]-->
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -125,6 +132,14 @@ foreach ($mainmenu as $k_mn => $v_mn){
         </div>
         <?= Alert::widget() ?>
         <?= $content ?>
+        
+        <?php //Contact us button ?>
+        <a href="<?= Url::to(['site/contact']) ?>" id="contact-us" class="gradient">
+            <div class="phone-number phone-number--below">
+                <i class="fa fa-phone" aria-hidden="true"></i> contact us</span>
+            </div>
+        </a>
+        <?php //End contact us button ?>
     </div>
     
     <footer id="footer">
