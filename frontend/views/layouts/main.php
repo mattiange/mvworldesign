@@ -77,7 +77,16 @@ foreach ($mainmenu as $k_mn => $v_mn){
 </head>
 <body>
 <?php $this->beginBody() ?>
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93542819-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-93542819-5');
+    </script>
+
     <div id="loading" style="display: none;"><img src="<?= Yii::getAlias('@web'); ?>/images/ico/gif/loading.gif" /></div>
     
     <header id="header">
