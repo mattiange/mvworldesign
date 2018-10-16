@@ -145,7 +145,7 @@ foreach ($mainmenu as $k_mn => $v_mn){
         <?php //Contact us button ?>
         <a href="<?= Url::to(['site/contact']) ?>" id="contact-us" class="gradient">
             <div class="phone-number phone-number--below">
-                <i class="fa fa-phone" aria-hidden="true"></i> contact us</span>
+                <span><i class="fa fa-phone" aria-hidden="true"></i><?= Yii::t('app', 'Contattaci') ?></span>
             </div>
         </a>
         <?php //End contact us button ?>
