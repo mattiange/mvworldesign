@@ -1,49 +1,166 @@
 /*
- * Created on: 8-ott-2018 15:18:00
+ * 
+ * aspect_ratio = larghezza/altezza
+ * 
+ * Dividere per aspect ratio e ottengo la nuova misura
+ * 
+ * 
+ * Created on: 16-ott-2018 15:18:00
  * Author    : Mattia Leonardo Angelillo
  * Email     : mattia.angelillo@gmail.com
  */
-$(document).ready(function (){
-    var id = ".home-widget";
-    
-    $('[data-step]', id).each(function (i, el){
-        $(el).show();
+(function( $ ) {
+ 
+    $.fn.slider = function(options) {
+        var settings = $.extend({
+        }, options );
         
-        var this_width = $(el).width();
-        var this_height = $(el).height();
-        var old_left = 0;
-        var delay = 0;
-        $("[data-delay]", this).each(function(j, el_1){
-            var this_show_width  = $(el_1).width();
-            var this_show_height = $(el_1).height();
-            var left = Math.abs(this_width-this_show_width);
-            //var left = ($(el_1).attr('data-left')===0 || typeof $(el_1).attr('data-left')==="undefined")?(Math.abs(this_width-this_show_width)):$(el_1).attr('data-left
-            var top =  ($(el_1).attr('data-top')===0 || typeof $(el_1).attr('data-top')==="undefined")?(this_height-this_show_height):$(el_1).attr('data-top');
-            //var right =  ($(el_1).attr('data-top')===0 || typeof $(el_1).attr('data-right')==="undefined")?0:$(el_1).attr('data-right');
-            delay += parseInt($(el_1).attr("data-delay"));
-            
-            setTimeout(function (){
-                if(old_left===0){
-                        $(el_1).animate({
-                            left: '+='+(left+(Math.abs(parseFloat($(el_1).css('left'))))), 
-                            top: top
-                        });
-                        old_left = left/2;
-                }else{
-                    if(typeof $(el_1).attr('data-right') !== "undefined"){
-                        $(el_1).animate({
-                            right : $(el_1).attr('data-right'),
-                            top : top
-                        });
+        var _this      = $(this);//Container's element
+        var thisWidth  = _this.width();//Container's width
+        var thisMaxWidth = 0;//Container's max width
+        var thisHeight = thisMaxWidth = parseInt(_this.attr('data-max-width'));//Container's max width and Container's height
+        var thisMaxHeight = parseInt(_this.attr('data-max-height'));//Container's max height
+        var thisRatio  = thisMaxWidth/thisMaxHeight;//Container's aspect ratio
+        /*var maxWidth   = 100;
+        var maxHeight  = 100;*/
+        var _elStep    = $('[data-step]', _el);//Group's element
+        var _el        = $('>*', _elStep);//All element to show
+        var ratio      = 0;//Aspect ratio of elements
+        var elWidth    = null;//Width of element to show
+        var elHeight   = null;//Height of element to show
+        var old_left   = null;
+        var left       = 0;//Left position
+        var top        = 0;
+        var delay      = 0;//Delay to show element
+        
+        container_size();
+        
+        $(_elStep).each(function(i, elStep){
+            $(elStep).show();
+            var temp = 0;
+            $(_el).each(function (k, el){
+                if($(el).attr('data-delay')==='undefined'){delay += 500;}
+                else{delay += parseInt($(el).attr('data-delay'));}
+                setTimeout(function (){
+                    elHeight = $(el).height();
+                    elWidth  = $(el).width();
+                    var height, width;
+                    top = ($(el).attr('data-top')===0 || typeof $(el).attr('data-top')==="undefined")?(thisHeight-elHeight):$(el).attr('data-top');
+                    if(k===0){left = thisWidth-elWidth-temp;}
+                    else{left -= elWidth/2;}
+
+                    if(elHeight>thisHeight){
+                        height = thisHeight/elHeight;
                     }else{
-                        $(el_1).animate({
-                            left: '+='+(old_left+(Math.abs(parseFloat($(el_1).css('left'))))), 
-                            top: top
-                        });
-                        old_left = old_left/2;
+                        height = elHeight/thisHeight;
                     }
+                    elWidth  = $(el).width();
+                    if(elWidth>thisWidth){
+                        width = thisWidth/elWidth;
+                    }else{
+                        width = elWidth/thisWidth;
+                    }
+                    
+                    if($(el).attr('data-effect')==="left to right"){
+                        left_to_right(el, left, $(el).attr('data-bottom'));
+                    }else if($(el).attr('data-effect')==="top to bottom"){
+                        top_to_bottom(el, top, $(el).attr('data-right'));
+                    }else{
+                        left_to_right(el, left, $(el).attr('data-bottom'));
+                    }
+                }, delay);
+                
+                /*$(el).css({
+                    width: (width*100)+"%",
+                    height: (height*100)+"%"
+                });*/
+                
+                //alert(ratio);
+                
+                /*elWidth  = $(el).width();
+                elHeight = $(el).height();
+                
+                ratio = (elWidth/elHeight);
+                
+                alert(ratio);*/
+                
+                //$(el).width((ratio)+"%");
+                
+                /*if(elWidth>thisWidth){
+                    ratio = maxWidth/elWidth;
+                    $(el).css('width', maxWidth);
+                    $(el).css('height', elHeight*ratio);
                 }
-            }, delay);
+                if(elHeight>thisHeight){
+                    ratio = maxHeight/elHeight;
+                    $(el).css('height', maxHeight);
+                    $(el).css('width', elWidth*ratio);
+                }*/
+                
+                /*if(elWidth>thisWidth){
+                    $(el).width('40%');
+                }else{
+                }*/
+            });
         });
-    });
-});
+ 
+        return this;
+        
+        
+        
+        /*********************************************
+         *  FUNCTIONS
+        *********************************************/
+        
+        
+        
+        /**
+         * Container's size
+         * 
+         * @returns {undefined}
+         */
+        function container_size(){
+            if(thisWidth>=thisMaxWidth){
+                _this.width(thisMaxWidth).height(thisMaxHeight);
+                thisWidth = thisMaxWidth;
+                thisHeight = thisMaxHeight;
+            }else{
+                thisWidth  = _this.width();
+                thisHeight = thisWidth/thisRatio;
+                _this.height(thisHeight);
+            }
+
+        }
+        
+        /**
+         * 
+         * 
+         * @param {[HtmlObject]} el
+         * @param {String} left
+         * @param {String} bottom 
+         * @returns {undefined}
+         */
+        function left_to_right(el, left, bottom){
+            $(el).animate({
+                left : left,
+                bottom : bottom
+            });
+        }
+        
+        /**
+         * 
+         * 
+         * @param {[HtmlObject]} el
+         * @param {String} top
+         * @param {String} right
+         * @returns {undefined}
+         */
+        function top_to_bottom(el, top, right){
+            $(el).animate({
+                top : top,
+                right: right
+            });
+        }
+    };
+ 
+}( jQuery ));

@@ -13,17 +13,19 @@ $this->registerMetaTag([
     <div class="wrapper margin-0-a">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="widget home-widget">
+                <div class="widget home-widget" data-max-height="530px" data-max-width="1100px">
                     <div class="slider-content">
-                        <div class="fraction-slider">
-                            <div class="slide" data-step="1">
-                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/1.png" data-delay="0" />
-                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/2.png" data-delay="500" />
-                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/3.png" data-delay="1000" />
-                                <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/4.png" data-delay="1500" />
-                                <span class="text-right" data-delay="2000" data-top="10" data-right="0">Web Design, realizzazione siti e portali web in ottica SEO</span>
-                                <span class="text-right" data-delay="2500" data-top="60" data-right="0">Grafica, immagine, comunicazione, pubblicità</span>
-                                <span class="text-right" data-delay="2500" data-top="110" data-right="0">Facebook Advertising, Google Adword e pay per click</span>
+                        <div class="slider">
+                            <div class="fraction-slider">
+                                <div class="slide" data-step="1">
+                                    <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/1.png" data-effect="left to right" data-bottom="0" data-delay="0" />
+                                    <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/2.png" data-effect="left to right" data-bottom="0" data-delay="500" />
+                                    <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/3.png" data-effect="left to right" data-bottom="0" data-delay="1000" />
+                                    <img src="<?= Yii::getAlias('@web') ?>/images/uploads/homepage/4.png" data-effect="left to right" data-bottom="0" data-delay="1500" />
+                                    <span class="text-right" data-delay="2000" data-top="10" data-effect="top to bottom" data-right="0">Web Design, realizzazione siti e portali web in ottica SEO</span>
+                                    <span class="text-right" data-delay="2500" data-top="60" data-effect="top to bottom" data-right="0">Grafica, immagine, comunicazione, pubblicità</span>
+                                    <span class="text-right" data-delay="2500" data-top="110" data-effect="top to bottom" data-right="0">Facebook Advertising, Google Adword e pay per click</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -42,3 +44,9 @@ $this->registerJsFile(Yii::getAlias('@web').'/js/home-widget.jquery.js',  [
         yii\jui\JuiAsset::className()
     ]
 ]);
+$this->registerJs("
+    jQuery(document).ready(function(){
+        $('.home-widget').slider({
+        });
+    });
+");

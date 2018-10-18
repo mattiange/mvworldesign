@@ -3,7 +3,7 @@
     Author     : Mattia Leonardo Angelillo
     Email      : mattia.angelillo@gmail.com
 */
-.home-widget{margin-bottom: 40px;background-size: cover;overflow: hidden;height: 530px;}
+.home-widget{margin-bottom: 40px;background-size: cover;overflow: hidden;min-width: 100px;max-height: 530px;border: 1px solid;margin: 0 auto;}
 .home-widget .slider-content{
     position: relative;
     width: 100%;
