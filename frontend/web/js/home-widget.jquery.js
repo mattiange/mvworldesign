@@ -33,12 +33,26 @@
         var top        = 0;
         var delay      = 0;//Delay to show element
         
-        container_size();
+        container_size();//Dimensione del container
         
         $(_elStep).each(function(i, elStep){
             $(elStep).show();
             var temp = 0;
             $(_el).each(function (k, el){
+                var width = parseInt($(el).width());
+                var height = parseInt($(el).height());
+                if(width>height){
+                    ratio = height/(width/100);//in %, height/(width/100)
+                }else{
+                    ratio = width/(height/100);
+                }
+
+                $(el).css({
+                    height : (ratio+"%"),
+                    width : 'auto'
+                });
+                //$(el).height(ratio+"%").width('auto');
+
                 if($(el).attr('data-delay')==='undefined'){delay += 500;}
                 else{delay += parseInt($(el).attr('data-delay'));}
                 setTimeout(function (){
@@ -61,6 +75,7 @@
                         width = elWidth/thisWidth;
                     }
                     
+                    //Effect to apply
                     if($(el).attr('data-effect')==="left to right"){
                         left_to_right(el, left, $(el).attr('data-bottom'));
                     }else if($(el).attr('data-effect')==="top to bottom"){
@@ -102,9 +117,30 @@
                 }else{
                 }*/
             });
+            
+            
+            /*$(window).resize(function (){
+                alert("RESIZE");
+                $(_el).each(function (k, el){
+                    var width = parseInt($(el).width());
+                    var height = parseInt($(el).height());
+                    if(width>height){
+                        ratio = height/(width/100);//in %, height/(width/100)
+                    }else{
+                        ratio = width/(height/100);
+                    }
+                    alert(ratio);
+                    $(el).css({
+                        height : (ratio+"%"),
+                        width : 'auto'
+                    });
+                    $(el).width();
+                });
+            });*/
         });
  
         return this;
+        
         
         
         
