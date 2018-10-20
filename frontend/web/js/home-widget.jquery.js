@@ -39,6 +39,8 @@
             $(elStep).show();
             var temp = 0;
             $(_el).each(function (k, el){
+                hideElement(el, 0-thisWidth-20);
+                
                 var width = parseInt($(el).width());
                 var height = parseInt($(el).height());
                 if(width>height){
@@ -51,7 +53,6 @@
                     height : (ratio+"%"),
                     width : 'auto'
                 });
-                //$(el).height(ratio+"%").width('auto');
 
                 if($(el).attr('data-delay')==='undefined'){delay += 500;}
                 else{delay += parseInt($(el).attr('data-delay'));}
@@ -148,7 +149,19 @@
          *  FUNCTIONS
         *********************************************/
         
-        
+        /**
+         * 
+         * @param {[Object object]} el
+         * @param {int} pos
+         * @returns {undefined}
+         */
+        function hideElement(el, pos){
+            var left = 0-$(el).width();
+            
+            $(el).css({
+                left : left
+            });
+        }
         
         /**
          * Container's size

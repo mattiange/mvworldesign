@@ -31,11 +31,10 @@
 .home-widget .slide img{z-index: 7000;}
 .home-widget .slide img, .home-widget .slide span{left:-100%;position: absolute;}
 .home-widget .slide span{
-    padding: 10px;
+    padding: 10px 0 10px 0;
     background-color: rgba(0,0,0,.6);
     color: #fff;
     float: left;
-    position: absolute;
     z-index: 7000;
     height: 38px !important;
 }
