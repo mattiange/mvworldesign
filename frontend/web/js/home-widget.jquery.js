@@ -1,9 +1,5 @@
 /*
- * 
- * aspect_ratio = larghezza/altezza
- * 
- * Dividere per aspect ratio e ottengo la nuova misura
- * 
+ * Homepage widget slideshow with elements
  * 
  * Created on: 16-ott-2018 15:18:00
  * Author    : Mattia Leonardo Angelillo
@@ -21,8 +17,6 @@
         var thisHeight = thisMaxWidth = parseInt(_this.attr('data-max-width'));//Container's max width and Container's height
         var thisMaxHeight = parseInt(_this.attr('data-max-height'));//Container's max height
         var thisRatio  = thisMaxWidth/thisMaxHeight;//Container's aspect ratio
-        /*var maxWidth   = 100;
-        var maxHeight  = 100;*/
         var _elStep    = $('[data-step]', _el);//Group's element
         var _el        = $('>*', _elStep);//All element to show
         var ratio      = 0;//Aspect ratio of elements
@@ -85,59 +79,7 @@
                         left_to_right(el, left, $(el).attr('data-bottom'));
                     }
                 }, delay);
-                
-                /*$(el).css({
-                    width: (width*100)+"%",
-                    height: (height*100)+"%"
-                });*/
-                
-                //alert(ratio);
-                
-                /*elWidth  = $(el).width();
-                elHeight = $(el).height();
-                
-                ratio = (elWidth/elHeight);
-                
-                alert(ratio);*/
-                
-                //$(el).width((ratio)+"%");
-                
-                /*if(elWidth>thisWidth){
-                    ratio = maxWidth/elWidth;
-                    $(el).css('width', maxWidth);
-                    $(el).css('height', elHeight*ratio);
-                }
-                if(elHeight>thisHeight){
-                    ratio = maxHeight/elHeight;
-                    $(el).css('height', maxHeight);
-                    $(el).css('width', elWidth*ratio);
-                }*/
-                
-                /*if(elWidth>thisWidth){
-                    $(el).width('40%');
-                }else{
-                }*/
             });
-            
-            
-            /*$(window).resize(function (){
-                alert("RESIZE");
-                $(_el).each(function (k, el){
-                    var width = parseInt($(el).width());
-                    var height = parseInt($(el).height());
-                    if(width>height){
-                        ratio = height/(width/100);//in %, height/(width/100)
-                    }else{
-                        ratio = width/(height/100);
-                    }
-                    alert(ratio);
-                    $(el).css({
-                        height : (ratio+"%"),
-                        width : 'auto'
-                    });
-                    $(el).width();
-                });
-            });*/
         });
  
         return this;
