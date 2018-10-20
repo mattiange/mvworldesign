@@ -156,7 +156,7 @@
          * @returns {undefined}
          */
         function hideElement(el, pos){
-            var left = 0-$(el).width();
+            var left = 0-$(el).outerWidth();
             
             $(el).css({
                 left : left
