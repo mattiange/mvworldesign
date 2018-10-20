@@ -38,9 +38,9 @@
                 var width = parseInt($(el).width());
                 var height = parseInt($(el).height());
                 if(width>height){
-                    ratio = height/(width/100);//in %, height/(width/100)
+                    ratio = ratioPercent(width, height);//in %, height/(width/100)
                 }else{
-                    ratio = width/(height/100);
+                    ratio = ratioPercent(height, width);
                 }
 
                 $(el).css({
@@ -80,6 +80,8 @@
                     }
                 }, delay);
             });
+            
+            window.addEventListener('resize', resize);
         });
  
         return this;
@@ -90,6 +92,45 @@
         /*********************************************
          *  FUNCTIONS
         *********************************************/
+        
+        /**
+         * 
+         * @returns {null}
+         */
+        function resize(){
+            thisWidth = _this.width();
+            thisHeight = _this.height();
+            container_size();
+            
+            var temp = 0;
+            $(_el).each(function (k, el){
+                elWidth = $(el).width();
+                elHeight = $(el).height();
+                
+                if(k===0){
+                    left = thisWidth-elWidth;
+                }else{
+                    left -= elWidth/2;
+                }
+                
+                //alert(thisWidth+"-"+elWidth+"=="+left);
+                
+                $(el).css({
+                    left: left
+                });
+            });
+        }
+        
+        /**
+         * 
+         * 
+         * @param {Number} a
+         * @param {Number} b
+         * @returns {Number}
+         */
+        function ratioPercent(a, b){
+            return b/(a/100);
+        }
         
         /**
          * 
