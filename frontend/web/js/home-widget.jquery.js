@@ -33,7 +33,6 @@
             $(elStep).show();
             var temp = 0;
             $(_el).each(function (k, el){
-                hideElement(el, 0-thisWidth-20);
                 
                 var width = parseInt($(el).width());
                 var height = parseInt($(el).height());
@@ -47,6 +46,8 @@
                     height : (ratio+"%"),
                     width : 'auto'
                 });
+                
+                hideElement(el, 0-thisWidth-20);
 
                 if($(el).attr('data-delay')==='undefined'){delay += 500;}
                 else{delay += parseInt($(el).attr('data-delay'));}
@@ -113,8 +114,6 @@
                     left -= elWidth/2;
                 }
                 
-                //alert(thisWidth+"-"+elWidth+"=="+left);
-                
                 $(el).css({
                     left: left
                 });
@@ -139,7 +138,7 @@
          * @returns {undefined}
          */
         function hideElement(el, pos){
-            var left = 0-$(el).outerWidth();
+            var left = 0-1-$(el).outerWidth(true);
             
             $(el).css({
                 left : left
@@ -188,9 +187,14 @@
          * @returns {undefined}
          */
         function top_to_bottom(el, top, right){
+            var left = 0;
+            if(parseInt(right)===0){
+                $(el).width('auto').height('auto');
+                left = thisWidth-parseInt($(el).outerWidth(true));
+            }
             $(el).animate({
                 top : top,
-                right: right
+                left: left
             });
         }
     };

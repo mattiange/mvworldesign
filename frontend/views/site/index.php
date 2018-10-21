@@ -38,7 +38,7 @@ $this->registerMetaTag([
 $this->registerCssFile(Yii::getAlias('@web').'/css/home-widget.css', [
     'depends' => 'yii\bootstrap\BootstrapAsset',
 ]);
-$this->registerJsFile(Yii::getAlias('@web').'/js/home-widget.jquery.js',  [
+$this->registerJsFile(Yii::getAlias('@web').'/js/home-widget.jquery.js?v=1',  [
     'depends' => [
         yii\web\JqueryAsset::className(),
         yii\jui\JuiAsset::className()
