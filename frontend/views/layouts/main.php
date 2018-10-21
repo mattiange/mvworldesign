@@ -134,6 +134,9 @@ foreach ($mainmenu as $k_mn => $v_mn){
     </header>
     
     <div id="content_wrapper">
+        <p class="alert alert-info">
+            <?= Yii::t('app', 'Il sito web è ancora in costruzione'); ?>
+        </p>
         <div class="breadcrumbs">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -149,6 +152,10 @@ foreach ($mainmenu as $k_mn => $v_mn){
             </div>
         </a>
         <?php //End contact us button ?>
+        <p>&nbsp;</p><p>&nbsp;</p>
+        <p class="alert alert-info">
+            <?= Yii::t('app', 'Il sito web è ancora in costruzione'); ?>
+        </p>
     </div>
     
     <footer id="footer">
