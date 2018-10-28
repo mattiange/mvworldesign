@@ -22,7 +22,7 @@
         "fxp/composer-asset-plugin": "~1.0",
         "demi/sitemap-generator": "~1.0",
         "evert/sitemap-php": "^1.2",
-        "himiklab/yii2-sitemap-module": "*"
+        "yii2tech/sitemap": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

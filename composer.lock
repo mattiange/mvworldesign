@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1a1e16a0c254f53c5aba24c8df57821",
+    "content-hash": "1cd99a1fbb04aec3d18fb351457aed08",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -497,48 +497,6 @@
             "time": "2018-07-02T11:37:17+00:00"
         },
         {
-            "name": "himiklab/yii2-sitemap-module",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/himiklab/yii2-sitemap-module.git",
-                "reference": "a05c1b8393eda14a301acf63420ebcfcfbef9fbe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/himiklab/yii2-sitemap-module/zipball/a05c1b8393eda14a301acf63420ebcfcfbef9fbe",
-                "reference": "a05c1b8393eda14a301acf63420ebcfcfbef9fbe",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "himiklab\\sitemap\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "HimikLab",
-                    "homepage": "https://github.com/himiklab"
-                }
-            ],
-            "description": "Yii2 module for automatically generation XML Sitemap",
-            "keywords": [
-                "Sitemap",
-                "module",
-                "xml",
-                "yii2"
-            ],
-            "time": "2017-11-08T11:12:17+00:00"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.1.3",
             "source": {
@@ -596,6 +554,51 @@
                 "mailer"
             ],
             "time": "2018-09-11T07:12:52+00:00"
+        },
+        {
+            "name": "yii2tech/sitemap",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yii2tech/sitemap.git",
+                "reference": "e6fc00474b83755a6f826a22ded1988aa5c54d45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2tech/sitemap/zipball/e6fc00474b83755a6f826a22ded1988aa5c54d45",
+                "reference": "e6fc00474b83755a6f826a22ded1988aa5c54d45",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.13"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii2tech\\sitemap\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "Provides support for site map creation",
+            "keywords": [
+                "Sitemap",
+                "yii2"
+            ],
+            "time": "2017-11-03T15:00:26+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -1354,6 +1357,48 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "himiklab/yii2-sitemap-module",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/himiklab/yii2-sitemap-module.git",
+                "reference": "a05c1b8393eda14a301acf63420ebcfcfbef9fbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/himiklab/yii2-sitemap-module/zipball/a05c1b8393eda14a301acf63420ebcfcfbef9fbe",
+                "reference": "a05c1b8393eda14a301acf63420ebcfcfbef9fbe",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "himiklab\\sitemap\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "HimikLab",
+                    "homepage": "https://github.com/himiklab"
+                }
+            ],
+            "description": "Yii2 module for automatically generation XML Sitemap",
+            "keywords": [
+                "Sitemap",
+                "module",
+                "xml",
+                "yii2"
+            ],
+            "time": "2017-11-08T11:12:17+00:00"
         },
         {
             "name": "myclabs/deep-copy",
