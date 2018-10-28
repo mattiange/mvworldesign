@@ -1,5 +1,5 @@
 <?php
-use yii2tech\sitemap\File;
+/*use yii2tech\sitemap\File;
 $siteMapFile = new File();
 $siteMapFile->writeUrl(['site/index'], ['priority' => '0.9']);
 $siteMapFile->writeUrl(['site/web'], ['priority' => '0.8', 'changeFrequency' => File::CHECK_FREQUENCY_DAILY]);
@@ -8,7 +8,7 @@ $siteMapFile->writeUrl(['site/marketing'], ['priority' => '0.7', 'changeFrequenc
 $siteMapFile->writeUrl(['site/portfolio'], ['priority' => '0.7', 'changeFrequency' => File::CHECK_FREQUENCY_DAILY]);
 $siteMapFile->writeUrl(['site/contact'], ['priority' => '0.7', 'changeFrequency' => File::CHECK_FREQUENCY_DAILY]);
 
-$siteMapFile->close();
+$siteMapFile->close();*/
 
 
 /* @var $this yii\web\View */
