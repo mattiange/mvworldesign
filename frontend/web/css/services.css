@@ -1,3 +1,16 @@
+.services .content::-webkit-scrollbar {
+    width: 7px;
+}
+.services .content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+.services .content::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.services .content::-webkit-scrollbar-track-
+
 .services{
     position: relative;
     margin-bottom: 80px;
@@ -16,8 +29,10 @@
     white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    
     height: 130px;
+    overflow-y: auto;
+    width: 93%;
+    margin: 0 auto;
 }
 .services .box .icon{
     position: absolute;
