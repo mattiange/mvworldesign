@@ -93,7 +93,7 @@ foreach ($mainmenu as $k_mn => $v_mn){
         }
       },
       "content": {
-        "message": "Questo sito web utilizza i cookie, se continuo sul sito accetti la nostra",
+        "message": "Questo sito web utilizza i cookie, se continui sul sito accetti la nostra",
         "link": "Cookie Police",
         "href": "https://www.mvworldesign.com/frontend/web/index.php/site/cookie"
       }
