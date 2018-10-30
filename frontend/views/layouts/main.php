@@ -75,6 +75,30 @@ foreach ($mainmenu as $k_mn => $v_mn){
       }
     </style>
     <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#d9b356",
+          "text": "#000000"
+        },
+        "button": {
+          "background": "transparent",
+          "text": "#472505",
+          "border": "#3b0b0b"
+        }
+      },
+      "content": {
+        "message": "Questo sito web utilizza i cookie, se continuo sul sito accetti la nostra",
+        "link": "Cookie Police",
+        "href": "https://www.mvworldesign.com/frontend/web/index.php/site/cookie"
+      }
+    })});
+</script>
 </head>
 <body>
 <?php $this->beginBody() ?>
