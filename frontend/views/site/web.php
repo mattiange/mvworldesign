@@ -7,6 +7,10 @@ $this->registerMetaTag([
     'name' => 'description',
     'content' => 'Vuoi un sito web visualizzabile su ogni dispostivo? La nostra web agency fa al caso tuo, contattaci 3348768832, info@mvworldesign.com',
 ]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'siti web, realizzare un ecommerce, registrare un sito, come si fa un sito, siti responsive',
+]);
 ?>
 <h1 class="text-center"><?= Yii::t('app', 'Web Design') ?></h1>
 
