@@ -65,7 +65,10 @@ $this->registerMetaTag([
                         </span>
 
                         <h3>
-                            <a href="<?= Url::toRoute(['site/category', 'id' => $cat->id]); ?>">
+                            <!--<a href="<?= Url::toRoute(['site/category', 'id' => $cat->id]); ?>">
+                                <?= $cat->service ?>
+                            </a>-->
+                            <a href="#">
                                 <?= $cat->service ?>
                             </a>
                         </h3>
