@@ -4,6 +4,25 @@
  * Created on: 16-ott-2018 15:18:00
  * Author    : Mattia Leonardo Angelillo
  * Email     : mattia.angelillo@gmail.com
+ * 
+ * STRUCTURE
+ * <div class="widget home-widget" data-max-height="..." data-max-width="...">
+ *      <div class="slider-content">
+ *          <div class="slider">
+ *              <div class="fraction-slider">
+ *                  <div class="slide" data-step="1">
+ *                      <element data-effect="left to right" data-bottom="0" data-delay="0"></element>
+ *                      <element data-effect="left to right" data-bottom="0" data-delay="100"></element>
+ *                      .....
+ *                      <element data-effect="left to right" data-bottom="0" data-delay="100(k)"></element>
+ *                  </div>
+ *              </div>
+ *          </div>
+ *      </div>
+ * </div>
+ * 
+ * data-effect: top to bottom | left to right
+ * data-delay:  delay to apply on single element
  */
 (function( $ ) {
  
@@ -99,8 +118,14 @@
          * @returns {null}
          */
         function resize(){
+            var windowWidth = $(window).width();
             thisWidth = _this.width();
             thisHeight = _this.height();
+            
+            if(windowWidth<thisWidth){
+                $(_this).width('100%');
+            }
+            
             container_size();
             
             var temp = 0;
@@ -114,8 +139,13 @@
                     left -= elWidth/2;
                 }
                 
+                //right = 0
+                if($(el).attr('data-right')==="0"){
+                    left = parseInt(_this.innerWidth())-parseInt($(el).innerWidth());
+                }
+                
                 $(el).css({
-                    left: left
+                    left: Math.abs(left)
                 });
             });
         }
@@ -151,7 +181,7 @@
          * @returns {undefined}
          */
         function container_size(){
-            if(thisWidth>=thisMaxWidth){
+            if(_this.innerWidth()>=thisMaxWidth){
                 _this.width(thisMaxWidth).height(thisMaxHeight);
                 thisWidth = thisMaxWidth;
                 thisHeight = thisMaxHeight;
@@ -160,7 +190,6 @@
                 thisHeight = thisWidth/thisRatio;
                 _this.height(thisHeight);
             }
-
         }
         
         /**
