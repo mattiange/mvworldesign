@@ -144,10 +144,40 @@
                     left = parseInt(_this.innerWidth())-parseInt($(el).innerWidth());
                 }
                 
+                //resizeText($(el));
+                
                 $(el).css({
                     left: Math.abs(left)
                 });
             });
+        }
+        
+        /**
+         * DOESN'T WORK
+         * 
+         * @param {type} container
+         * @returns {undefined}
+         */
+        function resizeText(container){
+            var ratio = ratioPercent($(container).width(), $(container).text().length);
+            if($(container).text().length > $(container).width()){
+                ratio = ratioPercent($(container).text().length, $(container).width());
+            }
+            
+            $(container).css({
+                'font-size' : ratio+'%'
+            });
+            
+            /*alert(container);
+            var preferredSize = _this.width()*_this.height();
+            var preferredFontSize = parseFloat($(container).css('font-size'));
+            var currentSize = $(container).width()*$(container).height();
+            var scalePercentage = Math.sqrt(currentSize)/Math.sqrt(preferredSize);
+            var fontSize = preferredFontSize*scalePercentage;
+            
+            alert(preferredFontSize);
+            
+            container.css('font-size', fontSize+'%');*/
         }
         
         /**
