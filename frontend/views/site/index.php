@@ -85,7 +85,7 @@ $this->registerCssFile(Yii::getAlias('@web').'/css/home-widget.css', [
 $this->registerCssFile(Yii::getAlias('@web').'/css/services.css', [
     'depends' => 'yii\bootstrap\BootstrapAsset',
 ]);
-$this->registerJsFile(Yii::getAlias('@web').'/js/home-widget.jquery.js?',  [
+$this->registerJsFile(Yii::getAlias('@web').'/js/home-widget.jquery.js',  [
     'depends' => [
         yii\web\JqueryAsset::className(),
         yii\jui\JuiAsset::className()

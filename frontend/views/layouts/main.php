@@ -67,6 +67,7 @@ foreach ($mainmenu as $k_mn => $v_mn){
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/regular.css" integrity="sha384-ZlNfXjxAqKFWCwMwQFGhmMh3i89dWDnaFU2/VZg9CvsMGA7hXHQsPIqS+JIAmgEq" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= Yii::getAlias('@web') ?>/css/scrollToTop.css" />
     <!--[if gte IE 9]>
     <style type="text/css">
       .gradient {
@@ -156,6 +157,9 @@ foreach ($mainmenu as $k_mn => $v_mn){
         <p class="alert alert-info">
             <?= Yii::t('app', 'Il sito web è ancora in costruzione'); ?>
         </p>
+        
+        <!-- Scroll to top button -->
+        <button onclick="topFunction()" id="scrollToTop" class="fa fa-angle-up" title="<?= Yii::t('app', 'Torna su') ?>"></button>
     </div>
     
     <footer id="footer">
@@ -208,6 +212,8 @@ foreach ($mainmenu as $k_mn => $v_mn){
         </div>
         <!-- End container -->							
     </footer>
+    
+    <script type="text/javascript" src="<?= Yii::getAlias('@web') ?>/js/scrolToTopButton.js"></script>
 <?php $this->endBody() ?>
 </body>
 </html>
