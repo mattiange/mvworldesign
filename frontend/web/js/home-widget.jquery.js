@@ -4,6 +4,25 @@
  * Created on: 16-ott-2018 15:18:00
  * Author    : Mattia Leonardo Angelillo
  * Email     : mattia.angelillo@gmail.com
+ * 
+ * STRUCTURE
+ * <div class="widget home-widget" data-max-height="..." data-max-width="...">
+ *      <div class="slider-content">
+ *          <div class="slider">
+ *              <div class="fraction-slider">
+ *                  <div class="slide" data-step="1">
+ *                      <element data-effect="left to right" data-bottom="0" data-delay="0"></element>
+ *                      <element data-effect="left to right" data-bottom="0" data-delay="100"></element>
+ *                      .....
+ *                      <element data-effect="left to right" data-bottom="0" data-delay="100(k)"></element>
+ *                  </div>
+ *              </div>
+ *          </div>
+ *      </div>
+ * </div>
+ * 
+ * data-effect: top to bottom | left to right
+ * data-delay:  delay to apply on single element
  */
 (function( $ ) {
  
@@ -33,20 +52,21 @@
             $(elStep).show();
             var temp = 0;
             $(_el).each(function (k, el){
-                hideElement(el, 0-thisWidth-20);
                 
                 var width = parseInt($(el).width());
                 var height = parseInt($(el).height());
                 if(width>height){
-                    ratio = height/(width/100);//in %, height/(width/100)
+                    ratio = ratioPercent(width, height);//in %, height/(width/100)
                 }else{
-                    ratio = width/(height/100);
+                    ratio = ratioPercent(height, width);
                 }
 
                 $(el).css({
                     height : (ratio+"%"),
                     width : 'auto'
                 });
+                
+                hideElement(el, 0-thisWidth-20);
 
                 if($(el).attr('data-delay')==='undefined'){delay += 500;}
                 else{delay += parseInt($(el).attr('data-delay'));}
@@ -80,6 +100,8 @@
                     }
                 }, delay);
             });
+            
+            window.addEventListener('resize', resize);
         });
  
         return this;
@@ -93,12 +115,90 @@
         
         /**
          * 
+         * @returns {null}
+         */
+        function resize(){
+            var windowWidth = $(window).width();
+            thisWidth = _this.width();
+            thisHeight = _this.height();
+            
+            if(windowWidth<thisWidth){
+                $(_this).width('100%');
+            }
+            
+            container_size();
+            
+            var temp = 0;
+            $(_el).each(function (k, el){
+                elWidth = $(el).width();
+                elHeight = $(el).height();
+                
+                if(k===0){
+                    left = thisWidth-elWidth;
+                }else{
+                    left -= elWidth/2;
+                }
+                
+                //right = 0
+                if($(el).attr('data-right')==="0"){
+                    left = parseInt(_this.innerWidth())-parseInt($(el).innerWidth());
+                }
+                
+                //resizeText($(el));
+                
+                $(el).css({
+                    left: Math.abs(left)
+                });
+            });
+        }
+        
+        /**
+         * DOESN'T WORK
+         * 
+         * @param {type} container
+         * @returns {undefined}
+         */
+        function resizeText(container){
+            var ratio = ratioPercent($(container).width(), $(container).text().length);
+            if($(container).text().length > $(container).width()){
+                ratio = ratioPercent($(container).text().length, $(container).width());
+            }
+            
+            $(container).css({
+                'font-size' : ratio+'%'
+            });
+            
+            /*alert(container);
+            var preferredSize = _this.width()*_this.height();
+            var preferredFontSize = parseFloat($(container).css('font-size'));
+            var currentSize = $(container).width()*$(container).height();
+            var scalePercentage = Math.sqrt(currentSize)/Math.sqrt(preferredSize);
+            var fontSize = preferredFontSize*scalePercentage;
+            
+            alert(preferredFontSize);
+            
+            container.css('font-size', fontSize+'%');*/
+        }
+        
+        /**
+         * 
+         * 
+         * @param {Number} a
+         * @param {Number} b
+         * @returns {Number}
+         */
+        function ratioPercent(a, b){
+            return b/(a/100);
+        }
+        
+        /**
+         * 
          * @param {[Object object]} el
          * @param {int} pos
          * @returns {undefined}
          */
         function hideElement(el, pos){
-            var left = 0-$(el).outerWidth();
+            var left = 0-1-$(el).outerWidth(true);
             
             $(el).css({
                 left : left
@@ -111,7 +211,7 @@
          * @returns {undefined}
          */
         function container_size(){
-            if(thisWidth>=thisMaxWidth){
+            if(_this.innerWidth()>=thisMaxWidth){
                 _this.width(thisMaxWidth).height(thisMaxHeight);
                 thisWidth = thisMaxWidth;
                 thisHeight = thisMaxHeight;
@@ -120,7 +220,6 @@
                 thisHeight = thisWidth/thisRatio;
                 _this.height(thisHeight);
             }
-
         }
         
         /**
@@ -147,9 +246,14 @@
          * @returns {undefined}
          */
         function top_to_bottom(el, top, right){
+            var left = 0;
+            if(parseInt(right)===0){
+                $(el).width('auto').height('auto');
+                left = thisWidth-parseInt($(el).outerWidth(true));
+            }
             $(el).animate({
                 top : top,
-                right: right
+                left: left
             });
         }
     };
