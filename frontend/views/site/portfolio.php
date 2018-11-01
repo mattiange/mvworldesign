@@ -34,7 +34,7 @@ $this->registerMetaTag([
         data-click="fullsize" data-category="<?= $service_category_id['id'] ?>" data-mime="<?= $v->type ?>">
         <div class="hover-overlay">
             <?php if($v->type != "application/pdf"): ?>
-            <img src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />
+            <img class="verticalAlign" src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />
             <?php else : ?>
             <embed src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" width="100%" height="100%" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" ><br>
             <?php endif; ?>
@@ -60,6 +60,7 @@ $this->registerMetaTag([
 </div>
 <?php
 $this->registerCssFile(Yii::getAlias('@web').'/css/showpicture.css');
+$this->registerCssFile(Yii::getAlias('@web').'/css/portfolio.css');
 $this->registerJsFile(Yii::getAlias('@web').'/js/portfolio.js',  [
     'depends' => [yii\web\JqueryAsset::className()]
 ]);
@@ -69,3 +70,16 @@ $this->registerJsFile(Yii::getAlias('@web').'/js/showpicture.js',  [
         yii\jui\JuiAsset::className()
     ]
 ]);
+$this->registerJsFile(Yii::getAlias('@web').'/js/portfolio.js',  [
+    'depends' => [yii\web\JqueryAsset::className()]
+]);
+$this->registerJsFile(Yii::getAlias('@web').'/js/vertical-align.js',  [
+    'depends' => [yii\web\JqueryAsset::className()]
+]);
+$this->registerJs("
+    jQuery(document).ready(function(){
+        $('.verticalAlign').verticalAlign({});
+        $('#portfolio').portfolio({
+        });
+    });
+");

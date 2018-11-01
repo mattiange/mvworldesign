@@ -1,0 +1,60 @@
+#portfolio{margin: 0;overflow: hidden;padding: 5px;}
+#portfolio img{
+    width: 100%;
+}
+#portfolio .portfolio-item{
+    position: relative;
+    display: none;
+    opacity: 0;
+    -moz-opacity: 0;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 0 3px #000;
+}
+#portfolio .portfolio-item:first-child{padding-left: 0;}
+#portfolio .overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: 20;
+    width: 100%;
+    text-align: center;
+    zoom: 1;
+    opacity: 0;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+}
+#portfolio .overlay-content h4 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+}
+#portfolio .overlay-content h5 {
+    color: #000;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+}
+#portfolio .category{margin-bottom: 10px;}
+#portfolio .category .btn:hover,#portfolio .category .btn.active{
+    border-bottom: 2px solid rgba(255,215,0,.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(255,215,0,.75);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(255,215,0,.75);
+    -o-box-shadow: 0px 2px 5px 0px rgba(255,215,0,.75);
+    box-shadow: 0px 2px 5px 0px rgba(255,215,0,.75);
+}
+#portfolio .btn-toolbar .btn-group{
+    display: block !important;
+    margin-left: 0;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: none;
+    width: 430px;
+}
