@@ -48,12 +48,12 @@
         var min = 1;
         var max = settings.fx.fx.length;
         var random = Math.floor((Math.random()*max) + min);
-        var delay = -300;
+        var delay = 0;
         var o;
         
         if(this.length>1){
             _this.each(function (i, el){
-                delay += 600;
+                delay += 100;
                 setTimeout(function (){
                     if(settings.fx.random===true){
                         random = Math.floor((Math.random()* max) + min);
