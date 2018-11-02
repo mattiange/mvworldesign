@@ -16,7 +16,7 @@ $this->registerMetaTag([
     <div class="container margin-0-a">
         <div class="row margin-0-a">
             <?php foreach ($model as $k => $v): ?>
-            <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="col-sm-6 col-md-6 col-lg-6 animated">
                 <div class="cover col-sm-2">
                     <img src="<?= $v['cover'] ?>" src="" alt="" />
                 </div>
@@ -29,3 +29,30 @@ $this->registerMetaTag([
         </div>
     </div>
 </div>
+<?php
+$this->registerJsFile(Yii::getAlias('@web').'/js/fx.jquery.js',  [
+    'depends' => [
+        yii\web\JqueryAsset::className(),
+        yii\jui\JuiAsset::className()
+    ]
+]);
+$this->registerJs("
+    jQuery(document).ready(function(){
+        $('.home-widget').slider({});
+        $('.animated').fx({
+            fx : {
+                duration: 150,
+                fx : [
+                    'blind',
+                    'bounce',
+                    'clip',
+                    'drop',
+                    'explode',
+                    'pulsate',
+                    'shake',
+                    'slide'
+                ]
+            }
+        });
+    });
+");
