@@ -11,7 +11,13 @@ echo Nav::widget([
     'options' => ['class' => 'navbar-nav navbar-left'],
     'items' => [
         ['label' => Yii::t('app', 'Home'), 'url' => ['site/index']],
-        ['label' => Yii::t('app', 'Portfolio'), 'url' => ['portfolio/index']],
+        [
+            'label' => Yii::t('app', 'Portfolio'), 'url' => ['portfolio/index'],
+            'items' => [
+                ['label' => Yii::t('app', 'Visualizza il portfolio'), 'url' => ['portfolio/index']],
+                ['label' => Yii::t('app', 'Nuova voce'), 'url' => ['portfolio/create']],
+            ],
+        ],
         [
             'label' => Yii::t('app', 'Servizi'),
             'items' => [
