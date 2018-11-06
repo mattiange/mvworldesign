@@ -27,7 +27,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <?php require_once '_topMenu.php'; ?>
-<div class="m-t-60">
+<div class="m-t-50">
     <?php require_once '_info.php'; ?>
 </div>
 <div class="container-fluid container-main">

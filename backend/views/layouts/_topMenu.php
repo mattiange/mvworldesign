@@ -18,8 +18,8 @@ echo Nav::widget([
                 ['label' => Yii::t('app', 'Tutte le categorie'), 'url' => ['service-categories/index']],
                 ['label' => Yii::t('app', 'Nuova categoria'), 'url' => ['service-categories/create']],
                 '<hr  />',
-                ['label' => Yii::t('app', 'Tutti i servizi'), 'url' => ['service/index']],
-                ['label' => Yii::t('app', 'Nuovo servizio'), 'url' => ['service/create']],
+                ['label' => Yii::t('app', 'Tutti i servizi'), 'url' => ['services/index']],
+                ['label' => Yii::t('app', 'Nuovo servizio'), 'url' => ['services/create']],
             ],
         ],
         [

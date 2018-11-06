@@ -121,7 +121,7 @@ a.desc:after {
 
 
 
-.m-t-60{margin-top: 60px;}
+.m-t-50{margin-top: 50px;}
 
 /*MENU*/
 .dropdown-submenu{
@@ -151,3 +151,24 @@ a.desc:after {
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 /*END MENU*/
+
+
+/*HEADER*/
+.header{
+    background-color: #1a3867;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 25px;
+    height: 90px;
+}
+header .container-logo{
+    float: right;
+    text-align: right;
+}
+header .page-title{
+    color: white;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 36px;
+    margin: 0;
+}
+/*END HEADER*/
