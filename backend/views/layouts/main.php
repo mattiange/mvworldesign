@@ -27,7 +27,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <?php require_once '_topMenu.php'; ?>
-<div class="m-t-50">
+<div class="m-t-50 m-b-10">
     <?php require_once '_info.php'; ?>
 </div>
 <div class="container-fluid container-main">
@@ -35,7 +35,7 @@ AppAsset::register($this);
         <div class="row-fluid">
             <?php /* Non usato */ ?>
             <div class="system-message"></div>
-
+            
             <?= $content ?>
         </div>
     </section>
