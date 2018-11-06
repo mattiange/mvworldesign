@@ -3,9 +3,10 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Pannello di amministrazione';
+//$this->params['infoImg'] = Yii::getAlias('@web').'/images/ico/png/16x16/home_16x16.png';
+$this->params['infoImg'] = 'home-2';
 ?>
 <div class="site-index">
-
     <div class="jumbotron">
         <h1>Congratulations!</h1>
 

@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = Yii::t('app', 'Services');
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['infoImg'] = 'options';
 ?>
 <div class="services-index">
 

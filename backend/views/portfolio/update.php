@@ -11,6 +11,7 @@ $this->title = Yii::t('app', 'Update Portfolio: ' . $model->id, [
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Portfolios'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['infoImg'] = 'file-add';
 ?>
 <div class="portfolio-update">
 

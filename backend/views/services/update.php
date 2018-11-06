@@ -11,6 +11,7 @@ $this->title = Yii::t('app', 'Update Services: ' . $model->id, [
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Services'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id, 'category_id' => $model->category_id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['infoImg'] = 'file-add';
 ?>
 <div class="services-update">
 

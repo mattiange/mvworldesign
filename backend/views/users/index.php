@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = Yii::t('app', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['infoImg'] = 'users';
 ?>
 <div class="users-index">
 

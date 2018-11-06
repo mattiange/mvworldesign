@@ -9,6 +9,7 @@ use yii\helpers\Html;
 $this->title = Yii::t('app', 'Create Portfolio');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Portfolios'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['infoImg'] = 'file-add';
 ?>
 <div class="portfolio-create">
 

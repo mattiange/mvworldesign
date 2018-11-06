@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Services'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['infoImg'] = 'options';
 ?>
 <div class="services-view">
 

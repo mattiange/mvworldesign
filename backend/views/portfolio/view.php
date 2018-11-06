@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Portfolios'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['infoImg'] = 'file-2';
 ?>
 <div class="portfolio-view">
 

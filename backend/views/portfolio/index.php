@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = Yii::t('app', 'Portfolios');
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['infoImg'] = 'file-2';
 ?>
 <div class="portfolio-index">
 
