@@ -5,7 +5,9 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Portfolio;
 use backend\models\PortfolioSearch;
+use backend\models\UploadForm;
 use yii\web\Controller;
+use yii\web\UploadedFile;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -65,11 +67,27 @@ class PortfolioController extends Controller
     public function actionCreate()
     {
         $model = new Portfolio();
+        $upload = new UploadForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if (Yii::$app->request->isPost) {
+            $upload->file = UploadedFile::getInstance($model, 'picture');
+            
+            if ($upload->file && $upload->validate()) {
+                $model->load(Yii::$app->request->post());
+                
+                $f = $upload->file->baseName.'.'.$upload->file->extension;
+                
+                $model->picture = $f;
+                $model->type = $upload->file->type;
+                
+                $upload->file->saveAs($f);
+                
+                if($model->validate() && $model->save()){
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            }
         }
-
+        
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -108,7 +126,18 @@ class PortfolioController extends Controller
 
         return $this->redirect(['index']);
     }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function actionUpload()
+    {
+        
 
+        return $this->render('upload', ['model' => $model]);
+    }
+    
     /**
      * Finds the Portfolio model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
