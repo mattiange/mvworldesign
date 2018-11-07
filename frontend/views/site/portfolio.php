@@ -34,7 +34,8 @@ $this->registerMetaTag([
         data-click="fullsize" data-category="<?= $service_category_id['id'] ?>" data-mime="<?= $v->type ?>">
         <div class="hover-overlay">
             <?php if($v->type != "application/pdf"): ?>
-            <img class="verticalAlign" src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />
+            <!--<img class="verticalAlign" src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />-->
+            <img class="verticalAlign" src="/backend/web/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />
             <?php else : ?>
             <embed src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" width="100%" height="100%" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" ><br>
             <?php endif; ?>
