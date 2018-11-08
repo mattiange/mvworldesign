@@ -119,10 +119,11 @@ a.desc:after {
     outline: none;
 }
 
-
+/*///////////////////////////////////////////////////////////////////////////*/
 
 .m-t-50{margin-top: 50px;}
 .m-b-10{margin-bottom: 10px;}
+.d-none{display: none;}
 
 /*ICON*/
 [class^="icon-"], [class*=" icon-"] {
@@ -194,3 +195,7 @@ header .page-title{
     margin: 0;
 }
 /*END HEADER*/
+
+table td img{
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+.search{
+    overflow: hidden;
+}
+.search .icon-search{
+    font-size: 26px;
+    line-height: 2;
+    height: auto;
+    cursor: pointer;
+}

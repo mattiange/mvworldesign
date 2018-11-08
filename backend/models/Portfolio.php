@@ -50,12 +50,12 @@ class Portfolio extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'picture' => Yii::t('app', 'Picture'),
-            'description' => Yii::t('app', 'Description'),
-            'client' => Yii::t('app', 'Client'),
-            'evidence' => Yii::t('app', 'Evidence'),
-            'service_category_id' => Yii::t('app', 'Service Category ID'),
-            'type' => Yii::t('app', 'Type'),
+            'picture' => Yii::t('app', 'Immagine'),
+            'description' => Yii::t('app', 'Descrizione'),
+            'client' => Yii::t('app', 'Cliente'),
+            'evidence' => Yii::t('app', 'In evidenza?'),
+            'service_category_id' => Yii::t('app', 'Categoria'),
+            'type' => Yii::t('app', 'Mime type'),
         ];
     }
 
