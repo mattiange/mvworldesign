@@ -34,7 +34,8 @@ $this->registerMetaTag([
         data-click="fullsize" data-category="<?= $service_category_id['id'] ?>" data-mime="<?= $v->type ?>">
         <div class="hover-overlay">
             <?php if($v->type != "application/pdf"): ?>
-            <img class="verticalAlign" src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />
+            <!--<img class="verticalAlign" src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />-->
+            <img src="https://www.mvworldesign.com/backend/web/images/uploads/portfolio/caricature.jpg" />
             <?php else : ?>
             <embed src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" width="100%" height="100%" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" ><br>
             <?php endif; ?>
@@ -49,14 +50,32 @@ $this->registerMetaTag([
                 </div>	  
             </a>
         </div>
+        
+        <?php //To clone ?>
+        <div class="clone" style="display: none;">
+            <div class="col-sm-4">
+                <div class="wrapper-img">
+                    <?php if($v->type != "application/pdf"): ?>
+                    <!--<img class="verticalAlign" src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" />-->
+                    <img src="https://www.mvworldesign.com/backend/web/images/uploads/portfolio/caricature.jpg" />
+                    <?php else : ?>
+                    <embed src="<?= Yii::getAlias('@web') ?>/images/uploads/portfolio/<?= $v->picture ?>" width="100%" height="100%" alt="<?= $v->description ?>"  title="<?= $v->description ?>" data-max-height="412" ><br>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="description"></div>
+            </div>
+        </div>
     </li>
     <?php $cont ++; ?>
     <?php endforeach; ?>
 </ul>
 
-<div id="showpicture" style="display: none;">
-    <div class="exit glyphicon glyphicon-remove"></div>
-    <div class="wrapper-img text-center"><img src="" alt="" src="" /></div>
+<div id="showpicture" class="container" style="display: none;">
+    <div class="row">
+        <div class="exit glyphicon glyphicon-remove"></div>
+    </div>
 </div>
 <?php
 $this->registerCssFile(Yii::getAlias('@web').'/css/showpicture.css');
@@ -79,7 +98,7 @@ $this->registerJsFile(Yii::getAlias('@web').'/js/vertical-align.js',  [
 $this->registerJs("
     jQuery(document).ready(function(){
         $('.verticalAlign').verticalAlign({});
-        $('#portfolio').portfolio({
-        });
+        $('#portfolio').portfolio({});
+        $('[data-click=\'fullsize\']').showel({});
     });
 ");
